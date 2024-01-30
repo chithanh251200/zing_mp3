@@ -1,0 +1,158 @@
+
+:root{
+    --background-total : #f9dbdb;
+    --text-primary : #282828; 
+    --sidebar-bg : #fbd3d2;
+    --sidebar-text-item-hover: #b72479;    
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    line-height: 1.5;
+    font-family: 'Inter,sans-serif';
+    font-weight: 500;
+    font-size: 18px;
+}
+ul{
+    list-style: none;
+    padding-left: 0;
+}
+a{
+    text-decoration: none;
+}
+
+
+/* // ---------------- //  */
+
+.App-zing_mp3{
+    display: flex;
+    align-items: center;
+}
+
+
+
+/* sidebar  */
+.sidebar-bg{
+    width: 240px;
+    background-color: var(--background-total);
+}
+
+
+.sidebar-logo{
+    padding: 0px 25px 0px 28px;
+    width: 100%;
+    height: 80px;
+    display: flex;
+    align-items: center;
+}
+.logo-mp3{
+    width: 120px;
+    height: 40px;
+    display: inline-block;
+}
+
+.category_list > li {
+    padding: 12px 21px;
+    color: var(--text-primary);
+}
+.category_item-icon-play{
+    display: none;
+}
+.category_item-link{
+    justify-content: space-between;
+}
+.category_item-link , .category_item-link-head{
+    display: flex;
+    align-items: center;
+}
+.category_list > li > a:hover {
+    color: var(--sidebar-text-item-hover);
+}
+.category_list > li > a:hover > .category_item-icon-play {
+    display: inline-block;
+}
+.category_list > .active{
+    border-left: 5px solid red;
+    background-color: #ccc;
+    color: var(--sidebar-bg);
+}
+.not-active{
+    border-left: 5px solid transparent;
+    color: var(--text-primary);
+}
+.category_list > .active > .category_item-link{
+    color: var(--sidebar-text-item-hover);
+}
+.category_item-icon{
+    margin-right: 15px;
+    line-height: 50%;
+}
+.category-bt_live{
+    padding: 1px 8px;
+    border: 1px solid red;
+    border-radius: 5px;
+    margin-left: 10px;
+    outline: none;
+    background-color: red;
+    color: white;
+    font-size: 11px;
+}
+
+
+.sidebar-line{
+    width: 80%;
+    margin: auto;
+    height: 1px;
+    background-color: #ccc;
+}
+
+.sidebar-scroll_list{
+    height: 498px;
+    overflow-y: hidden;
+    padding-top: 12px;
+}
+
+::-webkit-scrollbar {
+    width: 5px;
+}
+ 
+/* Track */
+::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3); 
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+    background: rgba(255,0,0,0.8); 
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.5); 
+}
+::-webkit-scrollbar-thumb:window-inactive {
+	background: rgba(255,0,0,0.4); 
+}
+
+.sidebar-scroll_list:hover{
+    overflow-y: auto;
+}
+
+
+
+
+
+/* content  */
+
+.Content-zing_mp3{
+    text-align: center;
+    width: 1358px;
+    height: auto;
+}
+.Right-zing_mp3{
+    width: 329px;
+}
