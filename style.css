@@ -60,7 +60,7 @@ a{
     color: var(--text-primary);
 }
 .category_item-icon-play{
-    display: none;
+    /* display: none; */
 }
 .category_item-link{
     justify-content: space-between;
@@ -116,6 +116,8 @@ a{
     padding-top: 12px;
 }
 
+/* link website -> https://css-tricks.com/examples/WebKitScrollbars/ */
+
 ::-webkit-scrollbar {
     width: 5px;
 }
@@ -141,8 +143,50 @@ a{
 .sidebar-scroll_list:hover{
     overflow-y: auto;
 }
+/* .sidebar-scroll_list::-webkit-scrollbar{
+    animation: sidebarCroll linear 2s;
+
+} */
+/* @keyframes sidebarCroll {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+    }
+  } */
+.category_item-icon-ellipsis{
+    position: relative;
+}
+.category_item-icon-ellipsis::after{
+    content: "Khác";
+    background-color: black;
+    color: white;
+    border-radius: 5px;
+    font-size: 14px;
+    position: absolute;
+    top: -25px;
+    left: -15px;
+    padding: 3px 8px;
+}
+.category_item-icon-ellipsis::before{
+    content: ".";
+    position: absolute;
+    color: red;
+    top: 0;
+    left: 0;
+    background-color: red;
+    /* border-width: 15px;
+    border-style: solid;
+    border-left-color: green; */
+}
 
 
+
+
+
+
+  
 
 
 
