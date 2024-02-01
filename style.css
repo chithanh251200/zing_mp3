@@ -37,7 +37,7 @@ a{
 
 /* sidebar  */
 .sidebar-bg{
-    width: 240px;
+    max-width: 240px;
     background-color: var(--background-total);
 }
 
@@ -60,7 +60,7 @@ a{
     color: var(--text-primary);
 }
 .category_item-icon-play{
-    /* display: none; */
+    display: none;
 }
 .category_item-link{
     justify-content: space-between;
@@ -91,6 +91,9 @@ a{
     margin-right: 15px;
     line-height: 50%;
 }
+.sidebar-l{
+    padding: 10px 0;
+}
 .category-bt_live{
     padding: 1px 8px;
     border: 1px solid red;
@@ -113,7 +116,6 @@ a{
 .sidebar-scroll_list{
     height: 498px;
     overflow-y: hidden;
-    padding-top: 12px;
 }
 
 /* link website -> https://css-tricks.com/examples/WebKitScrollbars/ */
@@ -165,26 +167,59 @@ a{
     border-radius: 5px;
     font-size: 14px;
     position: absolute;
-    top: -25px;
+    top: -35px;
     left: -15px;
     padding: 3px 8px;
 }
 .category_item-icon-ellipsis::before{
-    content: ".";
+    content: "";
     position: absolute;
     color: red;
-    top: 0;
-    left: 0;
-    background-color: red;
-    /* border-width: 15px;
-    border-style: solid;
-    border-left-color: green; */
+    top: -10px;
+    left: -3px;
+    border-left: 12px solid transparent;
+    border-right: 12px solid transparent;
+    border-top: 12px solid black;
 }
-
-
-
-
-
+.sidebar-create_new_list{
+    display: flex;
+    align-items: center;
+    padding: 12px 21px;
+    border-left: 5px solid transparent;
+    cursor: pointer;
+}
+.sidebar-create_new_list-icon{
+    margin-right: 15px;
+    line-height: 50%;
+}
+.sidebar-create_new_list:hover{
+    color: var(--sidebar-text-item-hover);
+}
+.category_list > .category_item-account{
+    border: 1px solid transparent;
+    border-radius: 8px;
+    padding: 15px 8px;
+    text-align: center;
+    margin: 12px 20px;
+    background-image: linear-gradient(117deg,#5a4be7,#c86dd7 102%);
+}
+.category_item-account_text{
+    font-size: 14px;
+    line-height: 1.4;
+    letter-spacing: 0px;
+    color: white;
+    font-weight: 600;
+}
+.lv-account {
+    outline: none;
+    border: 1px solid transparent;
+    border-radius: 20px;
+    padding: 5px 10px;
+    background-color: yellow;
+    color: black;
+    margin-top: 14px;
+    font-weight: 700;
+}
 
   
 
