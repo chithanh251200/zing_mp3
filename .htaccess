@@ -1,0 +1,15 @@
+RewriteEngine on
+
+#các fodel không có index không được truy cập
+Options -Indexes 
+
+#xóa phần đuôi .php
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^([^.]+)$ $1.php [NC,L]
+
+
+
+#cấu hình khong đc vào file , vào lỗi 
+RedirectMatch 403 config/Database.php$
+RedirectMatch 403 config/Session.php$

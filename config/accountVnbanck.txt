@@ -1,0 +1,21 @@
+
+Tích hợp thánh toán vnbank
+
+    account test : ncthanh35@gmail.com  , pass : 0883341Thanh
+
+    Terminal ID / Mã Website (vnp_TmnCode): 9IZWFV0M
+
+    Secret Key / Chuỗi bí mật tạo checksum (vnp_HashSecret): NYAOQSMYGXICJJZGEGJBGRZMXQBXAXPR
+
+    Url thanh toán môi trường TEST (vnp_Url): https://sandbox.vnpayment.vn/paymentv2/vpcpay.html
+
+
+   - Thông tin truy cập Merchant Admin để quản lý giao dịch:
+
+        Địa chỉ: https://sandbox.vnpayment.vn/merchantv2/
+
+        Tên đăng nhập: ncthanh357@gmail.com
+
+        Mật khẩu: (Là mật khẩu nhập tại giao diện đăng ký Merchant môi trường TEST)
+
+
