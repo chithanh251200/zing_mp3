@@ -1,6 +1,6 @@
 <?php
 
-    include_once '../../config/Database.php';
+    require_once '../../config/Database.php';
 
     class Songs{
 

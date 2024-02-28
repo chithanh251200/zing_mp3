@@ -1,7 +1,7 @@
 
 <?php
 
-    include_once '../classes/Singer.php';
+    require_once '../classes/Singer.php';
 
         if(isset($_POST['btn_add'])){
 
@@ -14,7 +14,7 @@
 
 
 <?php
-    include_once '../inc/headerAdmin.php';
+    require_once '../inc/headerAdmin.php';
 ?>
 
     <h1>thêm ca sĩ</h1>

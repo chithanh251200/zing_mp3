@@ -10,7 +10,9 @@
             // date_default_timezone_set('Asia/Ho_Chi_Minh');
 
              $vnp_Url = "https://sandbox.vnpayment.vn/paymentv2/vpcpay.html";
-             $vnp_Returnurl = "https://localhost/vnpay_php/vnpay_return.php";
+             $vnp_Returnurl = "https://localhost:80/thanks.php";
+            // $vnp_Returnurl = "https://localhost/vnpay_php/vnpay_return.php";
+
     
              $vnp_TmnCode = "9IZWFV0M";//Mã website tại VNPAY test 
              $vnp_HashSecret = "NYAOQSMYGXICJJZGEGJBGRZMXQBXAXPR"; //Chuỗi bí mật
@@ -21,8 +23,8 @@
             $vnp_OrderType = 'other';//$data['order_type']; // Mã danh mục hàng hóa , sản phẩm 
             $vnp_Amount = $data['amount'] * 100; // Số tiền thanh toán ( 100000 * 100 )
             $vnp_Locale = 'vn';//$data['language']; // ngôn ngữ ( vd : Viêt Nam )
-            $vnp_BankCode = 'VietinBank'; // $data['bank_code'];  // Xuất hiện chọn phương thức thanh toán ( tất cả : QR CODE , NỘI ĐỊA , QUỐC TẾ , VNPAY)
-            // $vnp_BankCode = 'VIETINBANK'; // $data['bank_code'];  //Mã Ngân hàng thanh toán nội địa. Ví dụ: NCB
+            // $vnp_BankCode = 'QR'; // $data['bank_code'];  // Xuất hiện chọn phương thức thanh toán ( tất cả : QR CODE , NỘI ĐỊA , QUỐC TẾ , VNPAY)
+            $vnp_BankCode = 'VIETINBANK'; // $data['bank_code'];  //Mã Ngân hàng thanh toán nội địa. Ví dụ: NCB
             // $vnp_BankCode = 'VISA'; // $data['bank_code'];   //Mã Ngân hàng thanh toán quốc tế . Ví dụ: VISA
             $vnp_IpAddr = $_SERVER['REMOTE_ADDR']; // địa chỉ web test hiện tại (zing-mp3) 127.0.0.1
             //Add Params of 2.0.1 Version
@@ -41,6 +43,7 @@
             // $vnp_Bill_City=$data['txt_bill_city'];
             // $vnp_Bill_Country=$data['txt_bill_country'];
             // $vnp_Bill_State=$data['txt_bill_state'];
+
             // // Invoice
             // $vnp_Inv_Phone=$data['txt_inv_mobile'];
             // $vnp_Inv_Email=$data['txt_inv_email'];
@@ -82,9 +85,9 @@
                 // "vnp_Inv_Type"=>$vnp_Inv_Type
             );
 
-            if (isset($vnp_BankCode) && $vnp_BankCode != "") {
-                $inputData['vnp_BankCode'] = $vnp_BankCode;
-            }
+            // if (isset($vnp_BankCode) && $vnp_BankCode != "") {
+            //     $inputData['vnp_BankCode'] = $vnp_BankCode;
+            // }
             // if (isset($vnp_Bill_State) && $vnp_Bill_State != "") {
             //     $inputData['vnp_Bill_State'] = $vnp_Bill_State;
             // }
@@ -121,7 +124,9 @@
             } 
             else if (isset($data['redirect'])) {
                 // check click vào button nào điều hướng đến đấy
-                header('Location: ' . $vnp_Url);
+                // header('Location: ' . $vnp_Url);
+                echo json_encode($returnData);
+
                 die();
             }else {
                 echo json_encode($returnData);
@@ -129,6 +134,99 @@
                 // vui lòng tham khảo thêm tại code demo
         }
 
+        public function checkIPN(){
+            
+            /* Payment Notify
+            * IPN URL: Ghi nhận kết quả thanh toán từ VNPAY
+            * Các bước thực hiện:
+            * Kiểm tra checksum 
+            * Tìm giao dịch trong database
+            * Kiểm tra số tiền giữa hai hệ thống
+            * Kiểm tra tình trạng của giao dịch trước khi cập nhật
+            * Cập nhật kết quả vào Database
+            * Trả kết quả ghi nhận lại cho VNPAY
+            */
 
+            // require_once("./config.php");
+            $inputData = array();
+            $returnData = array();
+
+            foreach ($_GET as $key => $value) {
+                if (substr($key, 0, 4) == "vnp_") {
+                    $inputData[$key] = $value;
+                }
+            }
+
+            $vnp_SecureHash = $inputData['vnp_SecureHash'];
+            unset($inputData['vnp_SecureHash']);
+            ksort($inputData);
+            $i = 0;
+            $hashData = "";
+            foreach ($inputData as $key => $value) {
+                if ($i == 1) {
+                    $hashData = $hashData . '&' . urlencode($key) . "=" . urlencode($value);
+                } else {
+                    $hashData = $hashData . urlencode($key) . "=" . urlencode($value);
+                    $i = 1;
+                }
+            }
+
+            $secureHash = hash_hmac('sha512', $hashData, $vnp_HashSecret);
+            $vnpTranId = $inputData['vnp_TransactionNo']; //Mã giao dịch tại VNPAY
+            $vnp_BankCode = $inputData['vnp_BankCode']; //Ngân hàng thanh toán
+            $vnp_Amount = $inputData['vnp_Amount']/100; // Số tiền thanh toán VNPAY phản hồi
+
+            $Status = 0; // Là trạng thái thanh toán của giao dịch chưa có IPN lưu tại hệ thống của merchant chiều khởi tạo URL thanh toán.
+            $orderId = $inputData['vnp_TxnRef'];
+
+            try {
+                //Check Orderid    
+                //Kiểm tra checksum của dữ liệu
+                if ($secureHash == $vnp_SecureHash) {
+                    //Lấy thông tin đơn hàng lưu trong Database và kiểm tra trạng thái của đơn hàng, mã đơn hàng là: $orderId            
+                    //Việc kiểm tra trạng thái của đơn hàng giúp hệ thống không xử lý trùng lặp, xử lý nhiều lần một giao dịch
+                    //Giả sử: $order = mysqli_fetch_assoc($result);   
+
+                    $order = NULL;
+                    if ($order != NULL) {
+                        if($order["Amount"] == $vnp_Amount) //Kiểm tra số tiền thanh toán của giao dịch: giả sử số tiền kiểm tra là đúng. //$order["Amount"] == $vnp_Amount
+                        {
+                            if ($order["Status"] != NULL && $order["Status"] == 0) {
+                                if ($inputData['vnp_ResponseCode'] == '00' || $inputData['vnp_TransactionStatus'] == '00') {
+                                    $Status = 1; // Trạng thái thanh toán thành công
+                                } else {
+                                    $Status = 2; // Trạng thái thanh toán thất bại / lỗi
+                                }
+                                //Cài đặt Code cập nhật kết quả thanh toán, tình trạng đơn hàng vào DB
+                                //
+                                //
+                                //
+                                //Trả kết quả về cho VNPAY: Website/APP TMĐT ghi nhận yêu cầu thành công                
+                                $returnData['RspCode'] = '00';
+                                $returnData['Message'] = 'Confirm Success';
+                            } else {
+                                $returnData['RspCode'] = '02';
+                                $returnData['Message'] = 'Order already confirmed';
+                            }
+                        }
+                        else {
+                            $returnData['RspCode'] = '04';
+                            $returnData['Message'] = 'invalid amount';
+                        }
+                    } else {
+                        $returnData['RspCode'] = '01';
+                        $returnData['Message'] = 'Order not found';
+                    }
+                } else {
+                    $returnData['RspCode'] = '97';
+                    $returnData['Message'] = 'Invalid signature';
+                }
+            } catch (Exception $e) {
+                $returnData['RspCode'] = '99';
+                $returnData['Message'] = 'Unknow error';
+            }
+            //Trả lại VNPAY theo định dạng JSON
+            echo json_encode($returnData);
+        }
 
     }

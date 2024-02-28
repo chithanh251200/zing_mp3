@@ -1,7 +1,7 @@
 <?php
 
-    include_once '../../config/Database.php';
-    include_once '../classes/Songs.php';
+    require_once '../../config/Database.php';
+    require_once '../classes/Songs.php';
 
     $s = new Songs();
     $rows = $s -> getAll();

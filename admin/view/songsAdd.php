@@ -1,7 +1,7 @@
 
 <?php
 
-    include_once '../classes/Songs.php';
+    require_once '../classes/Songs.php';
 
         if(isset($_POST['btn_add'])){
 

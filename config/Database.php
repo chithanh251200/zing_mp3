@@ -15,7 +15,8 @@
         }
 
         private function connectDB(){
-            $this -> conn = mysqli_connect( $this -> host , $this -> root , $this -> pass , $this -> name);
+            $this -> conn = new mysqli( $this -> host , $this -> root , $this -> pass , $this -> name);
+            $this -> conn -> set_charset("utf8");
             if(!$this -> conn){
                 $this -> error = "Contected fail" . $this -> conn -> connect_error;
                 echo $this -> error;

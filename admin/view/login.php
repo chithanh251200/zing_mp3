@@ -1,6 +1,6 @@
 <?php
-    include '../classes/Admin.php'; 
-    include_once '../../config/Session.php';
+    require_once '../classes/Admin.php'; 
+    require_once '../../config/Session.php';
 
     session_start();
 ?>

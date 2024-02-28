@@ -1,5 +1,5 @@
 <?php
-    include_once '../classes/Singer.php';
+    require_once '../classes/Singer.php';
 
 
     if(isset($_GET['id_SG'])){
