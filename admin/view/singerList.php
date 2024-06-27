@@ -92,7 +92,7 @@
             </tr>
             <?php
                 $sg = new Singer;
-                $stt = 0;
+                $stt = 1;
                 foreach($sg -> getAll() as $row){
             ?>
                 <tr style="text-align:center">

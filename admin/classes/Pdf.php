@@ -3,42 +3,38 @@
 
     require_once '../../lib/dompdf/vendor/autoload.php';
 
-    class Pdf{
+    // reference the Dompdf namespace
+    use Dompdf\Dompdf;
+    use Dompdf\Options;
 
-        // reference the Dompdf namespace
-        use Dompdf\Dompdf;
-        use Dompdf\Options;
+    class Pdf{
 
         private $dompdf;
         private $options;
 
-        private function __construct(){
+        public function __construct(){
             $this -> dompdf = new Dompdf(); // Tạo một đối tượng DOMPDF
-            $this -> options = new Options();
+            // $this -> options = new Options();
         }
 
         public function showPdf($data){
 
-            
-
-
-            $table = '<h1>Danh sách nghệ sĩ cùng chung thông tin </h1>';
+            $table = '<h1>Danh sách tất cả các nghệ sĩ </h1>';
             $table .='<table style="border: 1px solid black; border-collapse: collapse;">';         
             $table .=     '<tr>';
             $table .=        '<th>Số thứ tự</th>';
             $table .=         '<th>Tên ca sĩ</th>';
             $table .=         '<th>Gới tính</th>';
-            $table .=        '<th colspan="2">Tác Vụ</th>';
             $table .=     '</tr>';
             
-           
+            $stt = 1;
             foreach($data as $key => $value){
-                print_r($value);
-                // $table .=      '<tr style="text-align:center">';
-                // $table .=             '<td>0</td>';
-                // $table .=             '<td>'.$value.'</td>';
-                // $table .=             '<td>'.$value.'</td>';
-                // $table .=       '</tr>';
+                    $gender = $value['genderSG'] == 'male' ? 'Nam' : 'Nữ' ;
+                    $table .=      '<tr style="text-align:center">';
+                    $table .=             '<td>'.$stt++.'</td>';
+                    $table .=             '<td>'.ucwords($value['nameSG']).'</td>';
+                    $table .=             '<td>'.$gender.'</td>';
+                    $table .=       '</tr>';
             }
             $table .= '</table>';
 
@@ -51,21 +47,31 @@
 
 
             // set các font utf8 trên pdf 
-            $dompdf->set_option('isHtml5ParserEnabled', true);
-            $dompdf->set_option('isPhpEnabled', true);
-            $dompdf->set_option('defaultFont', 'Arial');
-            $dompdf->set_option('isRemoteEnabled', true);
-            $dompdf->set_option('isHtml5ParserEnabled', true);
-
-
+            
+            
             // $dompdf->setHttpContext('utf-8');
-            $dompdf->loadHtml($data, 'UTF-8');
+            $this -> dompdf->loadHtml($table, 'UTF-8');
+
+            
+            $this -> dompdf->set_option('defaultFont', 'Inter');
+            $this -> dompdf->set_option('fontDir', 'path/to/ttf/fonts');
+            $this -> dompdf->set_option('fontCache', 'path/to/font/cache/dir');
+            $this -> dompdf->set_option('defaultFont', 'font_name');
+
+
+            $this -> dompdf->set_option('isPhpEnabled', true); // Khởi động PHP
+            $this -> dompdf->set_option('isHtml5ParserEnabled', true); // Bật trình phân tích HTML5
+            $this -> dompdf->set_option('debugPng', true); // Chế độ debug cho PNG
+            $this -> dompdf->set_option('debugKeepTemp', true); // Giữ các tệp tạm thời khi debug
+            $this -> dompdf->set_option('isFontSubsettingEnabled', true); // Bật tạo subset font
+
+
 
             // (Optional) Setup the paper size and orientation
-            $dompdf->setPaper('A4', 'landscape');
+            $this -> dompdf->setPaper('A4', 'landscape');
 
             // Render the HTML as PDF
-            $dompdf->render();
+            $this -> dompdf->render();
 
 
             // $options = $dompdf->getOptions();
@@ -74,15 +80,13 @@
 
 
             // Output the generated PDF to Browser
-            // Output the generated PDF (1 = download and 0 = preview) 
-            ob_end_clean(); //(chú ý nếu không có đoạn code này thì sẽ sinh ra lỗi)
+            // Output the generated PDF (1 = download file pdf or 0 = preview file pdf) 
+            ob_end_clean(); // (chú ý nếu không có đoạn code này thì sẽ sinh ra lỗi)
 
             if(isset($_POST['download_Pdf'])){
-                $dompdf->stream('listsinger.pdf', array('Attachment' => 1));
+                $this -> dompdf->stream('listsinger.pdf', array('Attachment' => 1));
             }
-            $dompdf->stream('listsinger.pdf', array('Attachment' => 0));
-
-            // $dompdf -> stream();
+            $this -> dompdf->stream('listsinger.pdf', array('Attachment' => 0));
             exit(0);
 
         }

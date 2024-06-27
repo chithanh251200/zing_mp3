@@ -28,6 +28,14 @@
                 
             }
         }
+
+        public function registerGG($data){
+            if(!empty($data)){
+                echo "tồn tại dữ liệu";
+            }
+        }
+
+
     }
 
 
