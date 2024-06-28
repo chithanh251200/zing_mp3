@@ -10,8 +10,8 @@
 <body>
     <h1>Trang login người dùng</h1>
     <form action="" method="POST">
-        <label for="username">Tên đăng nhập</label>
-        <input type="text" value="" name="username">
+        <label for="email">Email</label>
+        <input type="text" value="" name="email">
 
         <label for="password">Mật khẩu</label>
         <input type="password" value="" name="password">

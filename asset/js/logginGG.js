@@ -21,10 +21,10 @@ const firebaseConfig = {
 const firebaseApp = initializeApp(firebaseConfig);
 const analytics = getAnalytics(firebaseApp);
 const auth = getAuth(firebaseApp);
+
+
+// login google
 const google = new GoogleAuthProvider();
-const facebook = new FacebookAuthProvider();
-
-
 const googleLogin = document.getElementById('googleSignInButton');
 googleLogin.addEventListener('click', function(){
     //    alert(5);
@@ -41,6 +41,10 @@ googleLogin.addEventListener('click', function(){
             });
 });
 
+
+
+// login facebook
+const facebook = new FacebookAuthProvider();
 const facebookLogin = document.getElementById('facebookSignInButton');
 facebookLogin.addEventListener('click', function(){
     signInWithPopup(auth, facebook)
@@ -63,3 +67,10 @@ facebookLogin.addEventListener('click', function(){
             // ...
         });
     });
+
+// login phone
+
+
+
+
+
