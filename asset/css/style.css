@@ -35,7 +35,6 @@ a{
 
 .App-zing_mp3{
     display: flex;
-    align-items: center;
 }
 
 
@@ -232,7 +231,7 @@ a{
 
 /* content  */
 
-.Content-zing_mp3{
+.Content_zing-mp3{
     text-align: center;
     width: 1358px;
     height: auto;

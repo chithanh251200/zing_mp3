@@ -1,5 +1,5 @@
 <?php
-    require_once './classes/Bank.php';
+    require_once '../classes/Bank.php';
     // echo "<pre>";
     // print_r($_SERVER);
     // echo "</pre>";
