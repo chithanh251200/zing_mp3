@@ -1,0 +1,54 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>trang danh sách bài hát</title>
+    
+</head>
+<body>
+    <h1>trang danh sách bài hát</h1>
+    <form id="loginForm">
+        <label for="name">name:</label>
+        <input type="text" id="name" name="name" required>
+        <br>
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required>
+        <br>
+        <button type="submit">Login</button>
+    </form>
+    <button id="googleSignInButton">Google</button>
+    <button id="facebookSignInButton">facebook</button>
+    <a href="loginSMS.php">SMS</a>
+
+    <script>
+        document.getElementById('loginForm').addEventListener('submit', async function (e) {
+            e.preventDefault();
+            
+            const name = document.getElementById('name').value;
+            console.log(name)
+
+            fetch('listSong/listSong.php',
+            {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({name})
+            })      
+            .then(response => response.json())
+            .then(data => {console.log(data)})
+            .catch(error => console.error('There was a problem with the fetch operation:', error));
+        });
+
+
+        
+
+
+
+
+    </script>
+</body>
+</html>

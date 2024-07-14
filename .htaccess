@@ -1,4 +1,13 @@
+<IfModule mod_setenvif.c>
+    SetEnvIf Authorization "(.*)" HTTP_AUTHORIZATION=$1
+</IfModule>
+
+
 RewriteEngine on
+
+#bật 
+RewriteCond %{HTTP:Authorization} ^(.*)
+RewriteRule .* - [e=HTTP_AUTHORIZATION:%1]
 
 #các fodel không có index không được truy cập
 Options -Indexes 

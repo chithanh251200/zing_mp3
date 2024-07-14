@@ -40,33 +40,13 @@ const google = new GoogleAuthProvider();
 const googleLogin = document.getElementById('googleSignInButton');
 if(googleLogin){
     googleLogin.addEventListener('click', function(){
-        //    alert(5);
+        alert(5);
         signInWithPopup(auth, google)
                 .then((result) => {
                     const credential = GoogleAuthProvider.credentialFromResult(result);
                     const user = result.user;
                     const token = user.uid;
-                    // console.log(user.accessToken);
-
-                    fetch('http://localhost:88/chithanh/zing-mp3/index.php', {
-                        method: 'POST',
-                        headers: {
-                            'Content-Type': 'application/json'
-                        },
-                        body: JSON.stringify({'token' : token})
-                        })
-                        .then(response => {
-                        if (!response.ok) {
-                            throw new Error('Network response was not ok ' + response.statusText);
-                        }
-                        return response.json();
-                        })
-                        .then(data => {
-                            console.log('Success:', token);
-                        })
-                        .catch(error => {
-                            console.error('Error:', error);
-                        });
+                    console.log(user);
 
                     window.location.href = 'http://localhost:88/chithanh/zing-mp3';
                 })
@@ -113,38 +93,41 @@ if(facebookLogin){
 //-------- login phone----------//
 // reCAPTCHA 
 window.recaptchaVerifier = new RecaptchaVerifier(auth, 'sendSMS', {
-'size': 'invisible',
-'callback': (response) => {
-    // reCAPTCHA solved, allow signInWithPhoneNumber.
-    onSignInSubmit();
-}
+    'size': 'invisible',
+    'callback': (response) => {
+        // reCAPTCHA solved, allow signInWithPhoneNumber.
+        onSignInSubmit();
+    }
 });
 
 // ------------- chú ý cực kì quan trọng : không đặt được thể xác thực sendMSM trong form sẽ không thực thi được ---------//
 const buttonSendSMS = document.getElementById('sendSMS');
-buttonSendSMS.addEventListener('click', function(){
-    // const phoneNumber = "+84868337741";
-    const phoneNumber = document.getElementById('phone').value;
-    // console.log(phoneNumber)
-    const appVerifier = window.recaptchaVerifier;
+if(buttonSendSMS){
+    buttonSendSMS.addEventListener('click', function(){
+        // const phoneNumber = "+84868337741";
+        const phoneNumber = document.getElementById('phone').value;
+        console.log(phoneNumber)
+        const appVerifier = window.recaptchaVerifier;
+    
+        if(phoneNumber){
+            signInWithPhoneNumber(auth, phoneNumber, appVerifier)
+            .then((confirmationResult) => {
+                // SMS sent. Prompt user to type the code from the message, then sign the
+                // user in with confirmationResult.confirm(code).
+                window.confirmationResult = confirmationResult;
+                console.log('send')
+            })
+            .catch((error) => {
+                // Error; SMS not sent
+                console.log('no')
+            });
+        }
+        else{
+            console.log('không tồn tại số điện thoại');
+        }
+    });
+}
 
-    if(phoneNumber){
-        signInWithPhoneNumber(auth, phoneNumber, appVerifier)
-        .then((confirmationResult) => {
-            // SMS sent. Prompt user to type the code from the message, then sign the
-            // user in with confirmationResult.confirm(code).
-            window.confirmationResult = confirmationResult;
-            console.log('send')
-        })
-        .catch((error) => {
-            // Error; SMS not sent
-            console.log('no')
-        });
-    }
-    else{
-        console.log('không tồn tại số điện thoại');
-    }
-});
 
 
 const loginBtnSMS = document.getElementById('loginSMS');

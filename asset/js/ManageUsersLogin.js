@@ -45,13 +45,6 @@ onAuthStateChanged(auth, (user) => {
     // tồn tại người dùng đăng nhập
     if(uid){
         console.log('tồn tại người dùng');
-        // xử lý UI
-        const LoginUI = document.getElementById('loginUser');
-        LoginUI.style.display = 'none';
-
-        // xử lý UI bật content-infoUser lên
-        const contentInforUser = document.getElementById('content_inforUser');
-        contentInforUser.style.display = 'block';
     }else{
         console.log('không tồn tại user');
     }

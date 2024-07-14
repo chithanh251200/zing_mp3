@@ -19,19 +19,18 @@ const firebaseApp = initializeApp(firebaseConfig);
 const auth = getAuth(firebaseApp);
 
 const logoutUser = document.getElementById('logoutUser');
-logoutUser.addEventListener('click', function(){
 
-    const contentInforUser = document.getElementById('content_inforUser');
-    contentInforUser.style.display = 'none';
-
-    const LoginUI = document.getElementById('loginUser');
-    LoginUI.style.display = 'block';
-
-    signOut(auth).then(() => {
-    // Sign-out successful.
-        console.log('đăng xuất thành công');
-    }).catch((error) => {
-    // An error happened.
-        console.log('không đăng xuất được');
+if(logoutUser){
+    logoutUser.addEventListener('click', function(){
+        signOut(auth).then(() => {
+        // Sign-out successful.
+            console.log('đăng xuất thành công');
+        }).catch((error) => {
+        // An error happened.
+            console.log('không đăng xuất được');
+        });
     });
-});
+}else{
+    console.log('không tồn tại dom ')
+}
+    

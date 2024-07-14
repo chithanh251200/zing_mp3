@@ -1,11 +1,17 @@
 {
-    "require": {
-        "phpoffice/phpspreadsheet": "^1.29",
-        "dompdf/dompdf": "^2.0"
-    },
-    "config": {
-        "platform": {
-            "php": "8.0"
+    "name": "admin/zing-mp3",
+    "autoload": {
+        "psr-4": {
+            "Admin\\ZingMp3\\": "src/"
         }
+    },
+    "authors": [
+        {
+            "name": "Nguyễn Chí Thành",
+            "email": "thanhnguyentn.glinking@gmail.com"
+        }
+    ],
+    "require": {
+        "firebase/php-jwt": "^6.10"
     }
 }

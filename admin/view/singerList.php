@@ -6,8 +6,6 @@
     
     require_once '../../lib/excel/vendor/autoload.php'; // excel 
     
-    require_once '../inc/headerAdmin.php'; // header dashbord
-    
 ?>
 <?php
 
@@ -17,20 +15,10 @@
         $data = $sg -> getAll();
         $pdf = new Pdf();
         $pdf -> showPdf($data);
-
-
-        
-        
-
-        
-
+    
         // instantiate and use the dompdf class
        
         // print_r($dompdf);
-        
-        
-        
-
     
     }
 
@@ -77,7 +65,14 @@
 
 ?>
 
-
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
     <h1>Danh sách ca sĩ</h1>
     <form action="" method="post" accept-charset="utf-8">
         <button name="show_Pdf" class='show-pdf'>Xem PDF</button>

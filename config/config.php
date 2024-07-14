@@ -18,3 +18,15 @@ $apiUrl = "https://sandbox.vnpayment.vn/merchant_webapi/api/transaction";
 //Expire
 $startTime = date("YmdHis");
 $expire = date('YmdHis',strtotime('+15 minutes',strtotime($startTime)));
+
+
+
+// config JWT
+define('JWT_SECRET', 'NCT251200');
+define('JWT_ISSUER', 'your_issuer');
+define('JWT_AUDIENCE', 'your_audience');
+define('JWT_EXPIRATION', 3600); // 1 gio
+
+
+
+?>

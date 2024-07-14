@@ -1,11 +1,11 @@
 <?php
 
-    require_once '../../config/Database.php';
+    include $_SERVER["DOCUMENT_ROOT"].'/chithanh/zing-mp3/config/Database.php';
 
     class Songs{
 
+        private $db;
         public $nameS;
-
 
         public function __construct(){
             $this -> db = new Database();
@@ -19,7 +19,15 @@
                 return $rows;
             }
         }
-
+        public function getNames($name){
+        $query = "SELECT * FROM `tb_songList` WHERE `nameS` = '$name'";
+            $result = $this -> db -> select($query);
+            $result = $this -> db -> select($query);
+            $rows = $result -> fetch_assoc();
+            if($rows != false){
+                return $rows;
+            }
+        }
         public function add($data , $dir){
             print_r($data);
             $query = "INSERT INTO `tb_songlist`(`id_song`, `nameS`, `imageS`, `id_singer`) 

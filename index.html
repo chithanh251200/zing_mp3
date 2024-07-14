@@ -1,27 +1,3 @@
-<?php
-    session_start();
-
-    // Kiểm tra xem người dùng đã đăng nhập chưa
-    if (!isset($_SESSION['emailUser']) && isset($_COOKIE['emailUser'])) {
-        // Nếu session không tồn tại nhưng cookie tồn tại
-        // Lấy thông tin từ cookie và đặt lại session
-        $_SESSION['emailUser'] = $_COOKIE['emailUser'];
-    }
-
-
-    // Kiểm tra lại lần nữa xem session đã được đặt hay chưa
-    if (!isset($_SESSION['emailUser'])) {
-        // Nếu người dùng chưa đăng nhập, chuyển hướng đến trang đăng nhập
-        echo "phien lam viec cua ban da het han , vui long dang nhap lai";
-
-        // header("Location: http://localhost:88/chithanh/zing-mp3/view/login.php");
-        // exit();
-
-    }else{
-        echo $_SESSION['emailUser']; 
-    }
-?>
-
 
 <!DOCTYPE html>
 <html lang="en">
@@ -35,9 +11,6 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
-    <script type="module" src="asset/js/ManageUsersLogin.js"></script>
-    <script type="module" src="asset/js/logoutUser.js"></script>
-    <script type="text" src="asset/js/test.js"></script>
 </head>
 <body>
     <div class="App-zing_mp3">
@@ -292,35 +265,26 @@
                     </button>
                 </div>
             </div>
-
-
-            <div id="loginUser" class="content_loginUser">
-                <?php
-                    if(isset($_SESSION['emailUser'])){
-                ?>
-                    <a href=''>Đăng xuat</a>
-                <?php
-                    }else{
-                ?>
-                    <a href="view/login.php">Đăng nhập</a>
+            <div class="content_user" id="contentUser">
+          
+                <div id="content_loginUser" class="content_loginUser">
+                    <a href="view/login.html">Đăng nhập</a>
                     <a href="">Đăng kí</a>
-                <?php
-                    }
-                ?>
-
-            </div>
-
-
-            <div style="display: none;" id="content_inforUser">
-                <div class="content_inforUser_profile">
-                    <img src="" alt="" class="profile-image">
-                    <div class="profile-name">Chi thanh</div>
-                    <div class="profile-email">ncthan@gmail.com</div>
                 </div>
-                <div class="content_inforUser_profile-body">
-                    <div class="profile-body_song-like">Bài hát yêu thích</div>
-                    <div style="cursor: pointer;" id="logoutUser" class="profile-body_logout">Đăng xuất</div>
+           
+                <div id="content_inforUser">
+                    <div class="content_inforUser_profile">
+                        <img src="" alt="" class="content_inforUser_profile-image">
+                        <div id="content_inforUser_profile-name"class="content_inforUser_profile-name">Chi thanh</div>
+                        <div class="content_inforUser_profile-email"></div>
+                    </div>
+                    <div class="content_inforUser_profile-body">
+                        <div class="profile-body_song-like">Bài hát yêu thích</div>
+                        <a href="view/login/logout.php" style="cursor: pointer;" id="logoutUser" class="profile-body_logout">Đăng xuất</a>
+                    </div>
                 </div>
+        
+
             </div>
         </div>
          <div class="right_zing-mp3">
@@ -353,5 +317,36 @@
             </div>
         </div>
     </div>
+
+
+    <!-- script -->
+    <script type="module" src="asset/js/ManageUsersLogin.js"></script>
+    <script type="module" src="asset/js/logoutUser.js"></script>
+    <!-- <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Sử dụng URLSearchParams để lấy các tham số URL
+            const params = new URLSearchParams(window.location.search);
+            const name = params.get('name');
+
+            // Kiểm tra và sử dụng các tham số
+            if (name) {
+                const content_loginUser = document.getElementById('content_loginUser');
+                content_loginUser.style.display = 'none';
+
+                const content_inforUser = document.getElementById('content_inforUser');
+                content_inforUser.style.display = 'block';
+
+                // set name
+                const contentInforUserProfileName = document.getElementById('content_inforUser_profile-name');
+                contentInforUserProfileName.innerHTML = name;
+
+
+                console.log('User Name:', name);
+                // Hiển thị dữ liệu trên trang hoặc sử dụng cho các mục đích khác
+            } else {
+                console.error('No user data found in URL parameters');
+            }
+        });
+    </script> -->
 </body>
 </html>

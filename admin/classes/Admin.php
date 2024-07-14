@@ -13,13 +13,16 @@
             $this -> db = new Database();
         }
 
-        public function checkAdmin($user , $pass){
-            if(isset($user) && isset($pass)){
-                $query = "SELECT * FROM  admin WHERE name = '$user' AND password = '$pass' LIMIT 1 ";
+        public function checkAdmin($email , $pass){
+            if(isset($email) && isset($pass)){
+                $query = "SELECT * FROM  admin WHERE `email` = '$email' AND `password` = '$pass' LIMIT 1 ";
+                // echo $query;
                 $result = $this -> db -> select($query);
+                // echo $result;
                 if($result != false){
                     $value = $result -> fetch_assoc();
                     // print_r( $value);
+                    // echo "đăng nhâp thành công";
                     return $value;
                 }
                 else{
