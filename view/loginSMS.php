@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Trang đăng nhập người dùng</title>
-    <script type="module" src="../../asset/js/loginSocial.js"></script>
+    <script type="module" src="../asset/js/loginSocial.js"></script>
 </head>
 <body>
     <h1>Đăng nhập bằng số điện thoại</h1>

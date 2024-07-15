@@ -51,8 +51,4 @@ $jwt = JWT::encode($payload, $key, 'HS256');
 
 echo json_encode($jwt);
 
-
-
-
-
 ?>

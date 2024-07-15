@@ -29,4 +29,9 @@ define('JWT_EXPIRATION', 3600); // 1 gio
 
 
 
+// confix nexmo Vonage 
+define('API_KEY', '02c91377');
+define('API_SECRET', 'tbD6utUfr2kWQQtb');
+
+
 ?>

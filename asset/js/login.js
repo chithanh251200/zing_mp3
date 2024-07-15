@@ -29,7 +29,7 @@ document.getElementById('loginForm').addEventListener('submit', async function (
 });
 
 function protected(token){
-    fetch('login/protected.php',
+    fetch('login/verifyToken.php',
     {
         method: 'GET',
         headers: {
@@ -40,15 +40,11 @@ function protected(token){
     .then(response => response.json())
     .then(dataAccount => {
 
-        // // kiểm tra account nếu là admin thì chuyển hướng đến trang quan lý
-        // if(dataAccount.status === 'success' && dataAccount.data.dataUser.role === 'admin'){
-        //     window.location.replace('../admin/view/dashboar.php');
-        //     console.log('trang quan lý');
-        // }else{
-        //     window.location.replace('../index.html');
-        //     console.log('trang người dùng');
-        // }
-        console.log(dataAccount.status)
+        // kiểm tra trạng thái thành công thì chuyển đến trang xác thực cấp 2 báng SMS OTP 
+        if(dataAccount.status === 'success'){
+            window.location.replace('login/auth2.php');
+        }
+        // console.log(dataAccount.status , dataAccount.data.dataUser.role)
     })
     .catch(error => console.error('There was a problem with the fetch operation:', error));
 }
