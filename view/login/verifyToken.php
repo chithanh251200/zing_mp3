@@ -13,6 +13,7 @@
 
     $key = JWT_SECRET; 
     $authHeader = $headers['Authorization'];
+    // print_r($headers);
 
     if ($authHeader) {
         list($jwt) = sscanf($authHeader, 'Bearer %s');

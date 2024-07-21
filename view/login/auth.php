@@ -23,19 +23,28 @@ $dataClient = json_decode($input, true);
 $email = $dataClient['email'];
 $password = md5($dataClient['password']);
 
+// trang thai
+$status = '';
+$dataJWT = [];
+
 // // lấy dữ liệu data check account
 $admin = new Admin();
 $rows = $admin -> checkAdmin($email , $password);
-
 // print_r($rows);
 
-// lấy  dữ liệu tạo token
-$dataJWT = [
-    'id_admin' => $rows['id_admin'],    
-    'email' => $rows['email'],
-    'name' => $rows['name'],
-    'role' => $rows['role']
-];
+if($rows) {
+    $status = 'success';
+    // lấy  dữ liệu tạo token
+    $dataJWT = [
+        'id_admin' => $rows['id_admin'],    
+        'email' => $rows['email'],
+        'name' => $rows['name'],
+        'role' => $rows['role']
+    ];
+}else{
+    $status = 'acccount erorr';
+}
+
 
 $payload = [
     "iss" => JWT_ISSUER,
@@ -49,6 +58,9 @@ $payload = [
 
 $jwt = JWT::encode($payload, $key, 'HS256');
 
-echo json_encode($jwt);
+echo json_encode([
+    'status' => $status,
+    'token' => $jwt,
+]);
 
 ?>

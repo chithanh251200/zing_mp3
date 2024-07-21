@@ -48,7 +48,7 @@
     <title>Trang xác thực SMS OTP</title>
 </head>
 <body>
-    <h1>Vui lòng nhập số điện thoại để nhận mã OTP</h1>
+    <h1>Vui lòng xác thực tài khoản  bảo mật cấp 2 bằng SMS</h1>
     <form action="" method="post">
         <label for="phone">Nhập số điện thoại</label>
         <input type="text" value="" id="phone" name="phone" value="+84">

@@ -4,25 +4,406 @@
     <meta charset="UTF-8">
     <meta email="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
+    <style>
+        .root{
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            border: 0;
+            height: 100%;
+            width: 50%;
+            margin: auto;
+            padding-top: 10%;
+        }
+        .root__wapper-login , .root__wapper-register{
+            display: flex; 
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 10%;
+            border-radius: 20px;
+            background-image: radial-gradient(#ffffff40, #fff0 40%), radial-gradient(hsl(44, 100%, 66%) 30%, hsl(338, 68%, 65%), hsla(338, 68%, 65%, .4) 41%, transparent 52%), radial-gradient(hsl(272, 100%, 60%) 37%, transparent 46%), linear-gradient(155deg, transparent 65%, hsl(142, 70%, 49%) 95%), linear-gradient(45deg, #0065e0, #0f8bff);
+            background-size: 200% 200%, 285% 500%, 285% 500%, cover, cover;
+            background-position: bottom left, 109% 68%, 109% 68%, center, center;
+        }
+        .root__wapper{
+            display: none;
+        }
+        .root__wapper.activeLR{
+            display: block;
+        }
+        .root__wapper-body__form-email__body, .root__wapper-body__form-phone__body{
+            display: flex;
+            flex-direction: column;
+        }
+        .root__wapper-body__list-item{
+            border: 2px solid #dce0e3;
+            padding: 10PX;
+            border-radius: 20px;
+            text-align: center;    
+            margin-bottom: 20px;
+            cursor: pointer;
+            background-color: white;
+        }
+        .root__wapper-body__list-item:hover{
+            background-color: #dce0e3;
+        }
+        
+        .root__wapper-body__form-head__text{
+            float: right
+        }
+
+        .root__wapper-body__form-body__control{
+            border: 1px solid red;
+            border-radius: 20px;
+            outline: none;
+            padding: 15px;
+            margin: 10px 0;
+        }
+        .root__wapper-body__form-body__control::placeholder{
+            /* padding-left: 10px; */
+            color: #000;
+        }
+        .root__footer-login__head , .root__footer-login__remember , .root__footer-register__head , .root__footer-register__remember{
+            text-align: center;
+        }
+        .root__footer-login__head > .root__footer-link__click , .root__footer-register__head > .root__footer-link__click{
+            color: red;
+            text-decoration: underline;
+        }   
+        .root__footer-login__remember , .root__footer-register__remember{
+            margin: 10px 0;
+        }
+        .root__footer-login__remember > a , .root__footer-register__remember > a{
+            color: red; 
+        }
+        .root__footer-login__footer , .root__footer-register__footer{
+            text-align:center;
+        }
+        .root__footer-login__footer > a , .root__footer-register__footer > a{
+            color: #000;
+        }
+        .root__wapper-body__form-head__text{
+            text-decoration: underline;
+            color: #ccc;
+            cursor: pointer;
+        }
+        /* / */
+        .root__wapper-body{
+            display: none;
+        }
+        .root__wapper-body__formFF{
+            display: none;
+        }
+        .activeFF{
+            display: block;
+        }
+        
+        /*  */
+        .root__wapper-body__form{
+            display: none;
+        }
+        .root__wapper-body__form.activeSE{
+            display: block;
+        }
+        /*  */
+        .root__wapper-body__form-head__success{
+            text-align: center;
+            color: red;
+        }
+        .root__wapper-body__form-phone__body{
+            position: relative;
+        }
+        .root__wapper-body__form-phone__buttonSendphone{
+            position: absolute;
+            right: 0;
+            padding: 15px 20px;
+            outline: navajowhite;
+            border-radius: 20px;
+            border: 1px solid red;
+            cursor: pointer;
+            background-color: #f05123;
+        }
+        #sendButtonLoginSMS{
+            top: 35%;
+        }
+        #sendButtonRegisterSMS{
+            top: 38%;
+        }
+
+        .root__wapper-body__form-phone__btnVerifySMS , .root__wapper-body__form-email__submit{
+            cursor: pointer;
+        }
+        .root__wapper-register___formTop, .root__wapper-register__top{
+            display: flex;
+            flex-direction: column;
+        }
+    </style>
 </head>
 <body>
-    <h1>Trang login</h1>
-    <form id="loginForm">
-        <label for="email">email:</label>
-        <input type="text" id="email" email="email" required>
-        <br>
-        <label for="password">Password:</label>
-        <input type="password" id="password" email="password" required>
-        <br>
-        <button type="submit">Login</button>
-    </form>
-    <button id="googleSignInButton">Google</button>
-    <button id="facebookSignInButton">facebook</button>
-    <a href="login/loginSMS.php">SMS</a>
+    <div class="root">
+        <div class="root__wapper root__wapper-login activeLR">
+            <!-- group_head-login -->
+            <div class="root__wapper-head">
+                <h1>Đăng nhập</h1>
+            </div>
+
+            <!-- group_body login list social-->
+            <div class="root__wapper-body activeFF">
+                <div id="" class="root__wapper-body__list-item root__wapper-body__list-buttonSM">
+                    <span>icon</span>
+                    <span>Sử dụng email / số điện thoại</span>
+                </div>
+                <div id="facebookSignInButton" class="root__wapper-body__list-item">
+                    <span>icon</span>
+                    <span>Đăng nhập với Facebook</span>
+                </div>
+                <div id="googleSignInButton" class="root__wapper-body__list-item">
+                    <span>icon</span>
+                    <span>Đăng nhập với Google</span>
+                </div>
+            </div>
+
+            <!-- group form login SMS , email  -->
+            <div class="root__wapper-body__formFF">
+                <!-- form login email -->
+                <form action="" method="post" class="root__wapper-login__form root__wapper-body__form-email root__wapper-body__form activeSE">
+                    <div class="root__wapper-body__form-head__success"></div>
+                    <div class="root__wapper-body__form-email__head">
+                        <span class="root__wapper-body__form-head__name">Tên đăng nhập</span>
+                        <span class="root__wapper-body__form-head__text ">Đăng nhập với số điện thoại</span>
+                    </div>
+                    <div class="root__wapper-body__form-email__body">
+                        <input type="text" id="loginEmail" name="loginEmail" class="root__wapper-body__form-body__control" placeholder="Email hoặc Username">
+                        <input type="password" id="loginPassword" name="loginPassword" class="root__wapper-body__form-body__control" placeholder="Mật khẩu">
+                        <div class="root__wapper-body__form-input__remember">
+                            <input type="checkbox" name="rememberPhone" id="rememberPhone" value="checked" />Ghi nhớ đăng nhập
+                        </div>
+                        <input type="submit" value="Đăng nhập" class="root__wapper-body__form-body__control root__wapper-body__form-email__submit">
+                    </div>
+                </form>
+
+
+                <!-- form đăng nhập phone bằng số điện thoại-->
+                <!-- chú ý quan trọng : khi sử dung fribase SMS thì không để phuong thức method="post" sẽ không gửi được -->
+                <div class="root__wapper-body__form-phone root__wapper-body__form ">
+                    <div class="root__wapper-body__form-phone__head">
+                        <span class="root__wapper-body__form-head__name">Số điện thoại</span>
+                        <span class="root__wapper-body__form-head__text">Đăng nhập với email</span>
+                    </div>
+                    <div class="root__wapper-body__form-phone__body">
+                        <input type="text" class="root__wapper-body__form-nameSMS root__wapper-body__form-body__control" value="" placeholder="Tên bạn">
+                        <input type="text" id="phoneSMS" class="root__wapper-body__form-phoneSMS root__wapper-body__form-body__control" value="" placeholder="Số điện thoại">
+                        <button id="sendButtonLoginSMS" class="root__wapper-body__form-phone__buttonSendphone">Gửi mã code</button>
+                        <input id="codeVerifyLoginSMS" style="background-color: #999;" type="text" class="root__wapper-body__form-phoneSMSCode root__wapper-body__form-body__control" placeholder="Nhập mã xác thực">
+                        <div class="root__wapper-body__form-input__remember">
+                            <input type="checkbox" name="rememberEmail" id="rememberEmail"> Ghi nhớ đăng nhập
+                        </div>
+                        <button id="btnVerifyLoginSMS" class="root__wapper-body__form-phone__btnVerifySMS root__wapper-body__form-body__control">Đăng nhập</button>
+                    </div>
+                </div>
+            </div>
+        
+            <!-- group footer login -->
+            <div class="root__footer-login">
+                <div class="root__footer-login__head">
+                    <span class="">Bạn chưa có tài khoản?</span>
+                    <span href="" class="root__footer-link__click">Đăng ký</span>
+                </div>  
+                <div class="root__footer-login__remember">
+                    <a href="http://">Quên mật khẩu</a>
+                </div>
+                <div class="root__footer-login__footer">Việc bạn tiếp tục sử dụng trang web này đồng nghĩa bạn đồng ý với <a href="http://">điều khoản sử dung</a> của chúng tôi</div>
+            </div>
+        </div>
+
+
+        <!-- register -->
+        <div class="root__wapper root__wapper-register">
+
+            <!-- group_head-register -->
+            <div class="root__wapper-head__register">
+                <h1>Đăng ký</h1>
+            </div>
+
+            <!-- group_body-register list social-->
+            <div class="root__wapper-body activeFF">
+                <div id="" class="root__wapper-body__list-item root__wapper-body__list-buttonSM">
+                    <span>icon</span>
+                    <span>Sử dụng email / số điện thoại</span>
+                </div>
+                <div id="facebookSignInButton" class="root__wapper-body__list-item">
+                    <span>icon</span>
+                    <span>Đăng ký với Facebook</span>
+                </div>
+                <div id="googleSignInButton" class="root__wapper-body__list-item">
+                    <span>icon</span>
+                    <span>Đăng ký với Google</span>
+                </div>
+            </div>
+
+            <!-- group_body-form register-->
+            <div class="root__wapper-body__formFF">
+                <!-- form register email -->
+                <form action="" method="post" class="root__wapper-register___form root__wapper-body__form-email root__wapper-body__form activeSE">
+                    <div class="root__wapper-register___formTop">
+                        <div>Tên của bạn</div>
+                        <input type="text" id="registerName" class="root__wapper-register___formTop_name root__wapper-body__form-body__control" placeholder="Họ và tên của bạn">
+                    </div>
+                    <div class="root__wapper-body__form-head__success"></div>
+                    <div class="root__wapper-body__form-email__head">
+                        <span class="root__wapper-body__form-head__name">Email của bạn</span>
+                        <span class="root__wapper-body__form-head__text ">Đăng kí với số điện thoại</span>
+                    </div>
+                    <div class="root__wapper-body__form-email__body">
+                        <input type="text" id="registerEmail" name="registerEmail" class="root__wapper-body__form-body__control" placeholder="Địa chỉ email">
+                        <input type="password" id="registerPassword" name="registerPassword" class="root__wapper-body__form-body__control" placeholder="Mật khẩu">
+                        <button id="sendButtonRegisterSMS" class="root__wapper-body__form-phone__buttonSendphone">Gửi mã code</button>
+                        <input type="text" class="root__wapper-register___form-codeEmail root__wapper-body__form-body__control" placeholder="Nhập mã xác thực">
+                        <input type="submit" value="Đăng nhập" class="root__wapper-body__form-body__control root__wapper-body__form-email__submit">
+                    </div>
+                </form>
+
+                <!-- form register phone -->
+                <div class="root__wapper-body__form-phone root__wapper-body__form">
+                    <div class="root__wapper-register__top">
+                        <div>Tên của bạn</div>
+                        <input type="text" class="root__wapper-register__top-name root__wapper-body__form-body__control" placeholder="Họ và tên của bạn">
+                    </div>
+                    <div class="root__wapper-body__form-phone__head">
+                        <span class="root__wapper-body__form-head__name">Số điện thoại</span>
+                        <span class="root__wapper-body__form-head__text">Đăng nhập với email</span>
+                    </div>
+                    <div class="root__wapper-register__body root__wapper-body__form-phone__body">
+                        <input type="text" id="registerSMS" class="root__wapper-register___body-phoneSMS root__wapper-body__form-body__control" value="" placeholder="Số điện thoại">
+                        <button id="sendButtonRegisterSMS" class="root__wapper-body__form-phone__buttonSendphone">Gửi mã code</button>
+                        <input id="codeVerifyRegisterSMS" style="background-color: #999;" type="text" class="root__wapper-register__body-phoneSMSCode root__wapper-body__form-body__control" placeholder="Nhập mã xác thực">
+                        <button id="btnVerifySMS" class="root__wapper-body__form-phone__btnVerifySMS root__wapper-body__form-body__control">Đăng ký</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- root__footer-register -->
+            <div class="root__footer-register">
+                <div class="root__footer-register__head">
+                    <span class="">Bạn đã có tài khoản?</span>
+                    <span href="" class="root__footer-link__click">Đăng nhập</span>
+                </div>  
+                <div class="root__footer-register__remember">
+                    <a href="http://">Quên mật khẩu</a>
+                </div>
+                <div class="root__footer-register__footer">Việc bạn tiếp tục sử dụng trang web này đồng nghĩa bạn đồng ý với <a href="http://">điều khoản sử dung</a> của chúng tôi</div>
+            </div>
+        </div>
+    </div>
+
+
+   
+   
+    <script>
+
+        // xử lý cho 2 trường hợp (1,2)
+        const wapperBody = document.querySelectorAll('.root__wapper-body');
+        const formFF = document.querySelectorAll('.root__wapper-body__formFF');
 
 
 
-    <script type="module" src="../asset/js/loginSocial.js"></script>
-    <script src="../asset/js/login.js"></script>
+       
+      
+         // 1 thực hiện hành vi click chuyển đăng ký với đăng nhập
+        const groupWapperDIV = document.querySelectorAll('.root__wapper');
+        const linkClick = document.querySelectorAll('.root__footer-link__click');
+        Array.from(linkClick).forEach((element , key) => {
+            element.addEventListener('click' , function(){
+                // check 
+                if(key === 0){
+                    groupWapperDIV[0].classList.remove('activeLR');
+                    groupWapperDIV[1].classList.add('activeLR');
+
+                    // cho các active form trở về ban đầu
+                    wapperBody[key].classList.add('activeFF');
+                    formFF[key].classList.remove('activeFF');
+
+                }else{
+                    groupWapperDIV[0].classList.add('activeLR');
+                    groupWapperDIV[1].classList.remove('activeLR');
+
+                    // cho các active form trở về ban đầu
+                    wapperBody[key].classList.add('activeFF');
+                    formFF[key].classList.remove('activeFF');
+                }
+
+            })
+        })
+
+         
+
+        // 2 Xử lý click vào đăng nhập đăng ký email và số điện thoại xuất form ra
+        const groupBodyListLoginItemSM = document.querySelectorAll('.root__wapper-body__list-buttonSM');
+        //  console.log(groupBodyListLoginItemSM.keys)
+
+
+        Array.from(groupBodyListLoginItemSM).forEach((element,key) => {
+            element.addEventListener('click' , function(){
+                // console.log(1 , key);
+                if(key === 0){
+                    // console.log(0);
+                    wapperBody[key].classList.remove('activeFF');
+                    formFF[key].classList.add('activeFF'); 
+                }else{
+                    // console.log(1);
+                    wapperBody[key].classList.remove('activeFF');
+                    formFF[key].classList.add('activeFF'); 
+                }
+            });
+        });
+
+
+
+         // xử lý click thay đổi form sms hoặc email
+         const formEmail = document.querySelectorAll('.root__wapper-body__form-email');
+        //  console.log(formEmail);
+         const formPhone = document.querySelectorAll('.root__wapper-body__form-phone');
+        //  console.log(formPhone);
+
+         const groupWapperBodyFormHeadText = document.querySelectorAll('.root__wapper-body__form-head__text');
+        //  console.log(groupWapperBodyFormHeadText);
+
+         Array.from(groupWapperBodyFormHeadText).forEach((element , key) => {
+            element.addEventListener('click' , function(){
+                if(key === 0){
+                    // console.log(0);
+                    formEmail[0].classList.remove('activeSE')
+                    formPhone[0].classList.add('activeSE')
+
+                }else if(key === 1){
+                    // console.log(1);
+                    formEmail[0].classList.add('activeSE')
+                    formPhone[0].classList.remove('activeSE')
+
+                }else if(key === 2){
+                    // console.log(2);
+                    formEmail[1].classList.remove('activeSE')
+                    formPhone[1].classList.add('activeSE')
+
+                }else{
+                    // console.log(3);
+                    formEmail[1].classList.add('activeSE')
+                    formPhone[1].classList.remove('activeSE')
+                }
+            })
+         })
+
+
+
+
+
+    </script>
+  
+  <!-- <script type="module" src="../asset/js/loginSocial.js"></script> -->
+  <script src="../asset/js/login.js"></script>
+  <script src="../asset/js/register.js"></script>
+
 </body>
 </html>

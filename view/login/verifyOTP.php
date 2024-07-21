@@ -1,12 +1,18 @@
 <?php
 
     require '../../vendor/autoload.php';
+    require '../../config/config.php';
 
     session_start();
 
 
+    // Vonage (https://ui.idp.vonage.com/ui/auth/login) hệ thống gửi SMS OTP
+    //tai khoan : nguyenchithanh2000.nina@gmail.com
+    //pass : 0868337741Ncthanh
+
+
     //Khởi tạo Thư viện
-    $basic  = new \Vonage\Client\Credentials\Basic("02c91377", "tbD6utUfr2kWQQtb");
+    $basic  = new \Vonage\Client\Credentials\Basic(API_KEY, API_SECRET);
     $client = new \Vonage\Client(new \Vonage\Client\Credentials\Container($basic));
 
     // xác thực code SMS

@@ -1,13 +1,15 @@
 
 
 
+const formLogin = document.querySelector('.root__wapper-login__form');
+// console.log(formLogin);
 
-document.getElementById('loginForm').addEventListener('submit', async function (e) {
+formLogin.addEventListener('submit', async function (e) {
     e.preventDefault();
     
-    const email = document.getElementById('email').value;
+    const email = document.getElementById('loginEmail').value;
     console.log(email)
-    const password = document.getElementById('password').value;
+    const password = document.getElementById('loginPassword').value;
     console.log(password)
 
     fetch('login/auth.php',
@@ -21,10 +23,16 @@ document.getElementById('loginForm').addEventListener('submit', async function (
     })      
     .then(response => response.json())
     // lấy token jwt từ server
-    .then(token => 
-        protected(token)
-        // console.log(token)
-    )
+    .then(data => {
+        if(data.status === 'success') {
+            protected(data.token)
+            // console.log(data)
+        }else{
+            document.querySelector('.root__wapper-body__form-head__success').textContent = data.status
+            // console.log(data);
+        }
+            
+    })
     .catch(error => console.error('There was a problem with the fetch operation:', error));
 });
 
@@ -40,11 +48,14 @@ function protected(token){
     .then(response => response.json())
     .then(dataAccount => {
 
+        console.log(dataAccount);
+
         // kiểm tra trạng thái thành công thì chuyển đến trang xác thực cấp 2 báng SMS OTP 
         if(dataAccount.status === 'success'){
             window.location.replace('login/auth2.php');
+        }else{
+            console.log(dataAccount.status)
         }
-        // console.log(dataAccount.status , dataAccount.data.dataUser.role)
     })
     .catch(error => console.error('There was a problem with the fetch operation:', error));
 }
