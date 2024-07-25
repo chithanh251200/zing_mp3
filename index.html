@@ -469,12 +469,14 @@
             </div>
             <div class="zm__LG">
                 <div class="LG">
+                    <div class="LG__wapper-delete">
+                        <i class="LG__wapper-delete-icon fa-solid fa-circle-xmark"></i>
+                    </div>
                     <div class="LG__wapper LG__wapper-login activeLR">
                         <!-- group_head-login -->
                         <div class="LG__wapper-head">
                             <h1>Đăng nhập</h1>
                         </div>
-            
                         <!-- group_body login list social-->
                         <div class="LG__wapper-body activeFF">
                             <div id="" class="LG__wapper-body__list-item LG__wapper-body__list-buttonSM">
@@ -490,7 +492,6 @@
                                 <span>Đăng nhập với Google</span>
                             </div>
                         </div>
-            
                         <!-- group form login SMS , email  -->
                         <div class="LG__wapper-body__formFF">
                             <!-- form login email -->
@@ -509,8 +510,6 @@
                                     <input type="submit" value="Đăng nhập" class="LG__wapper-body__form-body__control LG__wapper-body__form-email__submit">
                                 </div>
                             </form>
-            
-            
                             <!-- form đăng nhập phone bằng số điện thoại-->
                             <!-- chú ý quan trọng : khi sử dung fribase SMS thì không để phuong thức method="post" sẽ không gửi được -->
                             <div class="LG__wapper-body__form-phone LG__wapper-body__form ">
@@ -530,7 +529,6 @@
                                 </div>
                             </div>
                         </div>
-                    
                         <!-- group footer login -->
                         <div class="LG__footer-login">
                             <div class="LG__footer-login__head">
@@ -543,16 +541,12 @@
                             <div class="LG__footer-login__footer">Việc bạn tiếp tục sử dụng trang web này đồng nghĩa bạn đồng ý với <a href="http://">điều khoản sử dung</a> của chúng tôi</div>
                         </div>
                     </div>
-            
-            
                     <!-- register -->
                     <div class="LG__wapper LG__wapper-register">
-            
                         <!-- group_head-register -->
                         <div class="LG__wapper-head__register">
                             <h1>Đăng ký</h1>
                         </div>
-            
                         <!-- group_body-register list social-->
                         <div class="LG__wapper-body activeFF">
                             <div id="" class="LG__wapper-body__list-item LG__wapper-body__list-buttonSM">
@@ -568,7 +562,6 @@
                                 <span>Đăng ký với Google</span>
                             </div>
                         </div>
-            
                         <!-- group_body-form register-->
                         <div class="LG__wapper-body__formFF">
                             <!-- form register email -->
@@ -609,7 +602,6 @@
                                 </div>
                             </div>
                         </div>
-            
                         <!-- LG__footer-register -->
                         <div class="LG__footer-register">
                             <div class="LG__footer-register__head">
@@ -2221,12 +2213,23 @@
 
 
             // xử lý click xuất form login
-            const lg = document.querySelector('.LG');
-            // console.log(lg);
+            const zmLG = document.querySelector('.zm__LG');
+            // console.log(zmLG);
             document.querySelector('.header__user-login__BT').addEventListener('click' , function(){
-                lg.style.display = 'block';
-                lg.style.opacity = '1';
+                zmLG.style.display = 'block';
             })
+             // xử lý đóng form login
+             document.querySelector('.LG__wapper-delete').addEventListener('click' , function(){
+                zmLG.style.display = 'none';
+            })
+
+
+
+
+
+           
+
+
 
 
 

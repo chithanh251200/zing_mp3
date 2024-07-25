@@ -557,6 +557,17 @@ img{
     bottom: 0;
     background: #170F23;
     z-index: 1000;
+    transition: 2s linear;
+    display: none;
+}
+.LG__wapper-delete{
+    position: absolute;
+    top: 14%;
+    right: 10px;
+    cursor: pointer;
+}
+.LG__wapper-delete-icon{
+    font-size: 30px;
 }
 .LG{
     position: fixed;
@@ -568,9 +579,7 @@ img{
     width: 30%;
     margin: auto;
     padding-top: 10%;
-    /* opacity: 0; */
     transition: 1.5s linear;
-    /* display: none; */
     
 }
 .LG__wapper-login , .LG__wapper-register{
