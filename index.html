@@ -12,6 +12,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+
 </head>
 <body>
     <div class="App__zing-mp3">
@@ -350,15 +351,276 @@
                         </div>
                     </div>
                     <div class="header__user">
-                        <button class="header__user-button header__user-upLever">Nâng cấp tài khoản</button>
-                        <button class="header__user-ml header__user-button header__user-downWindown">
-                            <span class="header__user-downWindown-icon">                            
-                                <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M17.4966 13.4203V13.6633C17.4966 14.5857 16.7489 15.3333 15.8266 15.3333H4.16658C3.24427 15.3333 2.49658 14.5857 2.49658 13.6633V5.00334C2.49658 4.08103 3.24427 3.33334 4.16658 3.33334H9.99658" stroke="currentColor" stroke-linecap="round"></path><path fill-rule="evenodd" clip-rule="evenodd" d="M14.4979 11.6247C14.4103 11.7021 14.2955 11.7493 14.1696 11.75C14.1687 11.75 14.1678 11.75 14.1668 11.75C14.1659 11.75 14.165 11.75 14.1641 11.75C14.0382 11.7493 13.9233 11.7021 13.8358 11.6247L10.5043 8.70963C10.2964 8.52779 10.2754 8.21191 10.4572 8.00409C10.6391 7.79627 10.9549 7.77521 11.1628 7.95705L13.6668 10.1481V3.33334C13.6668 3.0572 13.8907 2.83334 14.1668 2.83334C14.443 2.83334 14.6668 3.0572 14.6668 3.33334V10.1481L17.1709 7.95705C17.3787 7.77521 17.6946 7.79627 17.8765 8.00409C18.0583 8.21191 18.0372 8.52779 17.8294 8.70963L14.4979 11.6247Z" fill="currentColor"></path><path d="M6 16.8333H14" stroke="currentColor" stroke-width="2" stroke-linecap="round"></path></svg>
-                            </span>
-                            <span class="header__user-downWindown-text">Tài khoản windown</span>
-                        </button>
-                        <i class="header__user-ml header__user-icon header__user-icon-setting fa-solid fa-gear"></i>
-                        <i class="header__user-ml header__user-icon header__user-icon-account fa-regular fa-user"></i>
+                        <div>   
+                            <button class="header__user-button header__user-upLever">Nâng cấp tài khoản</button>
+                            <button class="header__user-ml header__user-button header__user-downWindown">
+                                <span class="header__user-downWindown-icon">                            
+                                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M17.4966 13.4203V13.6633C17.4966 14.5857 16.7489 15.3333 15.8266 15.3333H4.16658C3.24427 15.3333 2.49658 14.5857 2.49658 13.6633V5.00334C2.49658 4.08103 3.24427 3.33334 4.16658 3.33334H9.99658" stroke="currentColor" stroke-linecap="round"></path><path fill-rule="evenodd" clip-rule="evenodd" d="M14.4979 11.6247C14.4103 11.7021 14.2955 11.7493 14.1696 11.75C14.1687 11.75 14.1678 11.75 14.1668 11.75C14.1659 11.75 14.165 11.75 14.1641 11.75C14.0382 11.7493 13.9233 11.7021 13.8358 11.6247L10.5043 8.70963C10.2964 8.52779 10.2754 8.21191 10.4572 8.00409C10.6391 7.79627 10.9549 7.77521 11.1628 7.95705L13.6668 10.1481V3.33334C13.6668 3.0572 13.8907 2.83334 14.1668 2.83334C14.443 2.83334 14.6668 3.0572 14.6668 3.33334V10.1481L17.1709 7.95705C17.3787 7.77521 17.6946 7.79627 17.8765 8.00409C18.0583 8.21191 18.0372 8.52779 17.8294 8.70963L14.4979 11.6247Z" fill="currentColor"></path><path d="M6 16.8333H14" stroke="currentColor" stroke-width="2" stroke-linecap="round"></path></svg>
+                                </span>
+                                <span class="header__user-downWindown-text">Tài khoản windown</span>
+                            </button>
+                            <i class="header__user-ml header__user-icon header__user-icon-setting fa-solid fa-gear"></i>
+                            <i class="header__user-ml header__user-icon header__user-icon-account fa-regular fa-user"></i>
+                        </div>
+                        <div class="header__user-list">
+                            <div class="header__user-list-item">
+                                <a href="" class="header__user-list-item-link">
+                                    <div class="header__user-list-item-link__setting">
+                                        <i class="header__user-list-item-link__icon fa-regular fa-circle-play"></i>
+                                        <span class="header__user-list-item-link__text">Trình phát nhạc</span>
+                                    </div>
+                                    <i class="fa-solid fa-chevron-right"></i>
+                                </a>
+                            </div>
+                            <div class="header__user-list-item">
+                                <a href="" class="header__user-list-item-link">
+                                    <div class="header__user-list-item-link__setting">
+                                        <i class="header__user-list-item-link__icon fa-solid fa-paintbrush"></i>
+                                        <span class="header__user-list-item-link__text">Giao diện</span>
+                                    </div>
+                                    <i class="fa-solid fa-chevron-right"></i>
+
+                                </a>
+                            </div>
+                            <div class="header__user-list-item__line"></div>
+                            <div class="header__user-list-item">
+                                <a href="" class="header__user-list-item-link">
+                                    <div class="header__user-list-item-link__setting">
+                                        <i class="header__user-list-item-link__icon fa-solid fa-circle-info"></i>
+                                        <span class="header__user-list-item-link__text">Giới thiệu</span>
+                                    </div>
+                                    <i class="fa-solid fa-arrow-trend-up"></i>
+                                </a>
+                            </div>
+                            <div class="header__user-list-item">
+                                <a href="" class="header__user-list-item-link">
+                                    <div class="header__user-list-item-link__setting">
+                                        <i class="header__user-list-item-link__icon fa-regular fa-file-lines"></i>
+                                        <span class="header__user-list-item-link__text">Thỏa thuận sử dụng </span>
+                                    </div>
+                                    <i class="fa-solid fa-arrow-trend-up"></i>
+                                </a>
+                            </div>
+                            <div class="header__user-list-item">
+                                <a href="" class="header__user-list-item-link">
+                                    <div class="header__user-list-item-link__setting">
+                                        <i class="header__user-list-item-link__icon fa-solid fa-shield-halved"></i>
+                                        <span class="header__user-list-item-link__text">Chính sách bảo mật</span>
+                                    </div>
+                                    <i class="fa-solid fa-arrow-trend-up"></i>
+                                </a>
+                            </div>
+                            <div class="header__user-list-item">
+                                <a href="" class="header__user-list-item-link">
+                                    <div class="header__user-list-item-link__setting">
+                                        <i class="header__user-list-item-link__icon fa-regular fa-flag"></i>
+                                        <span class="header__user-list-item-link__text">Báo cáo vi phạm bản quyền</span>
+                                    </div>
+                                    <i class="fa-solid fa-arrow-trend-up"></i>
+                                </a>
+                            </div>
+                            <div class="header__user-list-item">
+                                <a href="" class="header__user-list-item-link">
+                                    <div class="header__user-list-item-link__setting">
+                                        <i class="header__user-list-item-link__icon fa-solid fa-rectangle-ad"></i>
+                                        <span class="header__user-list-item-link__text">Quảng cáo</span>
+                                    </div>
+                                    <i class="fa-solid fa-arrow-trend-up"></i>
+                                </a>
+                            </div>
+                            <div class="header__user-list-item">
+                                <a href="" class="header__user-list-item-link">
+                                    <div class="header__user-list-item-link__setting">
+                                        <i class="header__user-list-item-link__icon fa-solid fa-phone"></i>
+                                        <span class="header__user-list-item-link__text">liên hệ</span>
+                                    </div>
+                                    <i class="fa-solid fa-arrow-trend-up"></i>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="header__user-login">
+                            <div class="header__user-login__BT">
+                                Đăng nhập
+                            </div>
+                            <div class="header__user-login__package">
+                                <div class="header__user-login__package-title">Đăng kí gói</div>
+                                <div class="header__user-login__package-body header__user-login__package-body-plus">
+                                    <div class="header__user-login__package-body-head">
+                                        <span class="header__user-login__package-head-zp3">Zing MP3</span>
+                                        <span class="header__user-login__package-body-head-lv">PLUS</span>
+                                    </div>
+                                    <div class="header__user-login__package-body-head-price">Chỉ từ 13.000đ/tháng</div>
+                                    <div class="header__user-login__package-body-head-all">Nghe nhạc với chất lượng cáo nhất, không quảng cáo</div>
+                                    <button class="header__user-login__package-body-head-bt">Tìm hiểu thêm</button>
+                                </div>
+                                <div class="header__user-login__package-body header__user-login__package-body header__user-login__package-body-primeum">
+                                    <div class="header__user-login__package-body-head">
+                                        <span class="header__user-login__package-body-primeum__zp3 header__user-login__package-head-zp3">Zing MP3</span>
+                                        <span class="header__user-login__package-body-primeum__pr header__user-login__package-body-head-lv">PREMIUM</span>
+                                    </div>
+                                    <div class="header__user-login__package-body-head-price">Chỉ từ 41.000đ/tháng</div>
+                                    <div class="header__user-login__package-body-head-all">Toàn bộ đặc quyền Plus cùng kho nhạc Premium</div>
+                                    <button class="header__user-login__package-body-primeum__bt header__user-login__package-body-head-bt">Tìm hiểu thêm</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="zm__LG">
+                <div class="LG">
+                    <div class="LG__wapper LG__wapper-login activeLR">
+                        <!-- group_head-login -->
+                        <div class="LG__wapper-head">
+                            <h1>Đăng nhập</h1>
+                        </div>
+            
+                        <!-- group_body login list social-->
+                        <div class="LG__wapper-body activeFF">
+                            <div id="" class="LG__wapper-body__list-item LG__wapper-body__list-buttonSM">
+                                <i class="LG__wapper-body__list-item-icon fa-solid fa-user"></i>
+                                <span>Sử dụng email / số điện thoại</span>
+                            </div>
+                            <div id="facebookSignInButton" class="LG__wapper-body__list-item">
+                                <i class="LG__wapper-body__list-item-icon fa-brands fa-facebook"></i>
+                                <span>Đăng nhập với Facebook</span>
+                            </div>
+                            <div id="googleSignInButton" class="LG__wapper-body__list-item">
+                                <i class="LG__wapper-body__list-item-icon fa-brands fa-google"></i>
+                                <span>Đăng nhập với Google</span>
+                            </div>
+                        </div>
+            
+                        <!-- group form login SMS , email  -->
+                        <div class="LG__wapper-body__formFF">
+                            <!-- form login email -->
+                            <form action="" method="post" class="LG__wapper-login__form LG__wapper-body__form-email LG__wapper-body__form activeSE">
+                                <div class="LG__wapper-body__form-head__success"></div>
+                                <div class="LG__wapper-body__form-email__head">
+                                    <span class="LG__wapper-body__form-head__name">Tên đăng nhập</span>
+                                    <span class="LG__wapper-body__form-head__text ">Đăng nhập với số điện thoại</span>
+                                </div>
+                                <div class="LG__wapper-body__form-email__body">
+                                    <input type="text" id="loginEmail" name="loginEmail" class="LG__wapper-body__form-body__control" placeholder="Email hoặc Username">
+                                    <input type="password" id="loginPassword" name="loginPassword" class="LG__wapper-body__form-body__control" placeholder="Mật khẩu">
+                                    <div class="LG__wapper-body__form-input__remember">
+                                        <input type="checkbox" name="rememberPhone" id="rememberPhone" value="checked" />Ghi nhớ đăng nhập
+                                    </div>
+                                    <input type="submit" value="Đăng nhập" class="LG__wapper-body__form-body__control LG__wapper-body__form-email__submit">
+                                </div>
+                            </form>
+            
+            
+                            <!-- form đăng nhập phone bằng số điện thoại-->
+                            <!-- chú ý quan trọng : khi sử dung fribase SMS thì không để phuong thức method="post" sẽ không gửi được -->
+                            <div class="LG__wapper-body__form-phone LG__wapper-body__form ">
+                                <div class="LG__wapper-body__form-phone__head">
+                                    <span class="LG__wapper-body__form-head__name">Số điện thoại</span>
+                                    <span class="LG__wapper-body__form-head__text">Đăng nhập với email</span>
+                                </div>
+                                <div class="LG__wapper-body__form-phone__body">
+                                    <input type="text" class="LG__wapper-body__form-nameSMS LG__wapper-body__form-body__control" value="" placeholder="Tên bạn">
+                                    <input type="text" id="phoneSMS" class="LG__wapper-body__form-phoneSMS LG__wapper-body__form-body__control" value="" placeholder="Số điện thoại">
+                                    <button id="sendButtonLoginSMS" class="LG__wapper-body__form-phone__buttonSendphone">Gửi mã code</button>
+                                    <input id="codeVerifyLoginSMS" style="background-color: #999;" type="text" class="LG__wapper-body__form-phoneSMSCode LG__wapper-body__form-body__control" placeholder="Nhập mã xác thực">
+                                    <div class="LG__wapper-body__form-input__remember">
+                                        <input type="checkbox" name="rememberEmail" id="rememberEmail"> Ghi nhớ đăng nhập
+                                    </div>
+                                    <button id="btnVerifyLoginSMS" class="LG__wapper-body__form-phone__btnVerifySMS LG__wapper-body__form-body__control">Đăng nhập</button>
+                                </div>
+                            </div>
+                        </div>
+                    
+                        <!-- group footer login -->
+                        <div class="LG__footer-login">
+                            <div class="LG__footer-login__head">
+                                <span class="">Bạn chưa có tài khoản?</span>
+                                <span href="" class="LG__footer-link__click">Đăng ký</span>
+                            </div>  
+                            <div class="LG__footer-login__remember">
+                                <a href="http://">Quên mật khẩu</a>
+                            </div>
+                            <div class="LG__footer-login__footer">Việc bạn tiếp tục sử dụng trang web này đồng nghĩa bạn đồng ý với <a href="http://">điều khoản sử dung</a> của chúng tôi</div>
+                        </div>
+                    </div>
+            
+            
+                    <!-- register -->
+                    <div class="LG__wapper LG__wapper-register">
+            
+                        <!-- group_head-register -->
+                        <div class="LG__wapper-head__register">
+                            <h1>Đăng ký</h1>
+                        </div>
+            
+                        <!-- group_body-register list social-->
+                        <div class="LG__wapper-body activeFF">
+                            <div id="" class="LG__wapper-body__list-item LG__wapper-body__list-buttonSM">
+                                <i class="LG__wapper-body__list-item-icon fa-solid fa-user"></i>
+                                <span>Sử dụng email / số điện thoại</span>
+                            </div>
+                            <div id="facebookSignInButton" class="LG__wapper-body__list-item">
+                                <i class="LG__wapper-body__list-item-icon fa-brands fa-facebook"></i>
+                                <span>Đăng ký với Facebook</span>
+                            </div>
+                            <div id="googleSignInButton" class="LG__wapper-body__list-item">
+                                <i class="LG__wapper-body__list-item-icon fa-brands fa-google"></i>
+                                <span>Đăng ký với Google</span>
+                            </div>
+                        </div>
+            
+                        <!-- group_body-form register-->
+                        <div class="LG__wapper-body__formFF">
+                            <!-- form register email -->
+                            <form action="" method="post" class="LG__wapper-register___form LG__wapper-body__form-email LG__wapper-body__form activeSE">
+                                <div class="LG__wapper-register___formTop">
+                                    <div>Tên của bạn</div>
+                                    <input type="text" id="registerName" class="LG__wapper-register___formTop_name LG__wapper-body__form-body__control" placeholder="Họ và tên của bạn">
+                                </div>
+                                <div class="LG__wapper-body__form-head__success"></div>
+                                <div class="LG__wapper-body__form-email__head">
+                                    <span class="LG__wapper-body__form-head__name">Email của bạn</span>
+                                    <span class="LG__wapper-body__form-head__text ">Đăng kí với số điện thoại</span>
+                                </div>
+                                <div class="LG__wapper-body__form-email__body">
+                                    <input type="text" id="registerEmail" name="registerEmail" class="LG__wapper-body__form-body__control" placeholder="Địa chỉ email">
+                                    <input type="password" id="registerPassword" name="registerPassword" class="LG__wapper-body__form-body__control" placeholder="Mật khẩu">
+                                    <button id="sendButtonRegisterSMS" class="LG__wapper-body__form-phone__buttonSendphone">Gửi mã code</button>
+                                    <input type="text" class="LG__wapper-register___form-codeEmail LG__wapper-body__form-body__control" placeholder="Nhập mã xác thực">
+                                    <input type="submit" value="Đăng nhập" class="LG__wapper-body__form-body__control LG__wapper-body__form-email__submit">
+                                </div>
+                            </form>
+            
+                            <!-- form register phone -->
+                            <div class="LG__wapper-body__form-phone LG__wapper-body__form">
+                                <div class="LG__wapper-register__top">
+                                    <div>Tên của bạn</div>
+                                    <input type="text" class="LG__wapper-register__top-name LG__wapper-body__form-body__control" placeholder="Họ và tên của bạn">
+                                </div>
+                                <div class="LG__wapper-body__form-phone__head">
+                                    <span class="LG__wapper-body__form-head__name">Số điện thoại</span>
+                                    <span class="LG__wapper-body__form-head__text">Đăng nhập với email</span>
+                                </div>
+                                <div class="LG__wapper-register__body LG__wapper-body__form-phone__body">
+                                    <input type="text" id="registerSMS" class="LG__wapper-register___body-phoneSMS LG__wapper-body__form-body__control" value="" placeholder="Số điện thoại">
+                                    <button id="sendButtonRegisterSMS" class="LG__wapper-body__form-phone__buttonSendphone">Gửi mã code</button>
+                                    <input id="codeVerifyRegisterSMS" style="background-color: #999;" type="text" class="LG__wapper-register__body-phoneSMSCode LG__wapper-body__form-body__control" placeholder="Nhập mã xác thực">
+                                    <button id="btnVerifySMS" class="LG__wapper-body__form-phone__btnVerifySMS LG__wapper-body__form-body__control">Đăng ký</button>
+                                </div>
+                            </div>
+                        </div>
+            
+                        <!-- LG__footer-register -->
+                        <div class="LG__footer-register">
+                            <div class="LG__footer-register__head">
+                                <span class="">Bạn đã có tài khoản?</span>
+                                <span href="" class="LG__footer-link__click">Đăng nhập</span>
+                            </div>  
+                            <div class="LG__footer-register__remember">
+                                <a href="http://">Quên mật khẩu</a>
+                            </div>
+                            <div class="LG__footer-register__footer">Việc bạn tiếp tục sử dụng trang web này đồng nghĩa bạn đồng ý với <a href="http://">điều khoản sử dung</a> của chúng tôi</div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -411,7 +673,9 @@
                         <div class="New__release-list">
                             <div class="New__release-list-item">
                                 <a href="" class="New__release-list-item-link">
-                                    <img src="asset/img/slider/slider1.jpg" alt="" class="New__release-list-item-link__image">
+                                    <div class="New__release-list-item-link__thumbnail">
+                                        <img src="asset/img/active2/066d26b40cc4aa939f62c70492095685.jpg" alt="" class="New__release-list-item-link__image">
+                                    </div>
                                     <div class="New__release-list-item-link__info">
                                         <div class="New__release-list-item-link__info-NameSong">Hẹn Anh Kiếp Sau</div>
                                         <div class="New__release-list-item-link__info-Ten">Nhật thủy</div>
@@ -425,7 +689,9 @@
                             </div>
                             <div class="New__release-list-item">
                                 <a href="" class="New__release-list-item-link">
-                                    <img src="asset/img/slider/slider1.jpg" alt="" class="New__release-list-item-link__image">
+                                    <div class="New__release-list-item-link__thumbnail">
+                                        <img src="asset/img/active2/066d26b40cc4aa939f62c70492095685.jpg" alt="" class="New__release-list-item-link__image">
+                                    </div>
                                     <div class="New__release-list-item-link__info">
                                         <div class="New__release-list-item-link__info-NameSong">Hẹn Anh Kiếp Sau</div>
                                         <div class="New__release-list-item-link__info-Ten">Nhật thủy</div>
@@ -439,7 +705,9 @@
                             </div>
                             <div class="New__release-list-item">
                                 <a href="" class="New__release-list-item-link">
-                                    <img src="asset/img/slider/slider1.jpg" alt="" class="New__release-list-item-link__image">
+                                    <div class="New__release-list-item-link__thumbnail">
+                                        <img src="asset/img/active2/066d26b40cc4aa939f62c70492095685.jpg" alt="" class="New__release-list-item-link__image">
+                                    </div>
                                     <div class="New__release-list-item-link__info">
                                         <div class="New__release-list-item-link__info-NameSong">Hẹn Anh Kiếp Sau</div>
                                         <div class="New__release-list-item-link__info-Ten">Nhật thủy</div>
@@ -453,7 +721,9 @@
                             </div>
                             <div class="New__release-list-item">
                                 <a href="" class="New__release-list-item-link">
-                                    <img src="asset/img/slider/slider1.jpg" alt="" class="New__release-list-item-link__image">
+                                    <div class="New__release-list-item-link__thumbnail">
+                                        <img src="asset/img/active2/066d26b40cc4aa939f62c70492095685.jpg" alt="" class="New__release-list-item-link__image">
+                                    </div>
                                     <div class="New__release-list-item-link__info">
                                         <div class="New__release-list-item-link__info-NameSong">Hẹn Anh Kiếp Sau</div>
                                         <div class="New__release-list-item-link__info-Ten">Nhật thủy</div>
@@ -467,7 +737,9 @@
                             </div>
                             <div class="New__release-list-item">
                                 <a href="" class="New__release-list-item-link">
-                                    <img src="asset/img/slider/slider1.jpg" alt="" class="New__release-list-item-link__image">
+                                    <div class="New__release-list-item-link__thumbnail">
+                                        <img src="asset/img/active2/066d26b40cc4aa939f62c70492095685.jpg" alt="" class="New__release-list-item-link__image">
+                                    </div>
                                     <div class="New__release-list-item-link__info">
                                         <div class="New__release-list-item-link__info-NameSong">Hẹn Anh Kiếp Sau</div>
                                         <div class="New__release-list-item-link__info-Ten">Nhật thủy</div>
@@ -481,7 +753,9 @@
                             </div>
                             <div class="New__release-list-item">
                                 <a href="" class="New__release-list-item-link">
-                                    <img src="asset/img/slider/slider1.jpg" alt="" class="New__release-list-item-link__image">
+                                    <div class="New__release-list-item-link__thumbnail">
+                                        <img src="asset/img/active2/066d26b40cc4aa939f62c70492095685.jpg" alt="" class="New__release-list-item-link__image">
+                                    </div>
                                     <div class="New__release-list-item-link__info">
                                         <div class="New__release-list-item-link__info-NameSong">Hẹn Anh Kiếp Sau</div>
                                         <div class="New__release-list-item-link__info-Ten">Nhật thủy</div>
@@ -495,7 +769,9 @@
                             </div>
                             <div class="New__release-list-item">
                                 <a href="" class="New__release-list-item-link">
-                                    <img src="asset/img/slider/slider1.jpg" alt="" class="New__release-list-item-link__image">
+                                    <div class="New__release-list-item-link__thumbnail">
+                                        <img src="asset/img/active2/066d26b40cc4aa939f62c70492095685.jpg" alt="" class="New__release-list-item-link__image">
+                                    </div>
                                     <div class="New__release-list-item-link__info">
                                         <div class="New__release-list-item-link__info-NameSong">Hẹn Anh Kiếp Sau</div>
                                         <div class="New__release-list-item-link__info-Ten">Nhật thủy</div>
@@ -509,7 +785,9 @@
                             </div>
                             <div class="New__release-list-item">
                                 <a href="" class="New__release-list-item-link">
-                                    <img src="asset/img/slider/slider1.jpg" alt="" class="New__release-list-item-link__image">
+                                    <div class="New__release-list-item-link__thumbnail">
+                                        <img src="asset/img/active2/066d26b40cc4aa939f62c70492095685.jpg" alt="" class="New__release-list-item-link__image">
+                                    </div>
                                     <div class="New__release-list-item-link__info">
                                         <div class="New__release-list-item-link__info-NameSong">Hẹn Anh Kiếp Sau</div>
                                         <div class="New__release-list-item-link__info-Ten">Nhật thủy</div>
@@ -523,7 +801,9 @@
                             </div>
                             <div class="New__release-list-item">
                                 <a href="" class="New__release-list-item-link">
-                                    <img src="asset/img/slider/slider1.jpg" alt="" class="New__release-list-item-link__image">
+                                    <div class="New__release-list-item-link__thumbnail">
+                                        <img src="asset/img/active2/066d26b40cc4aa939f62c70492095685.jpg" alt="" class="New__release-list-item-link__image">
+                                    </div>
                                     <div class="New__release-list-item-link__info">
                                         <div class="New__release-list-item-link__info-NameSong">Hẹn Anh Kiếp Sau</div>
                                         <div class="New__release-list-item-link__info-Ten">Nhật thủy</div>
@@ -537,7 +817,9 @@
                             </div>
                             <div class="New__release-list-item">
                                 <a href="" class="New__release-list-item-link">
-                                    <img src="asset/img/slider/slider1.jpg" alt="" class="New__release-list-item-link__image">
+                                    <div class="New__release-list-item-link__thumbnail">
+                                        <img src="asset/img/active2/066d26b40cc4aa939f62c70492095685.jpg" alt="" class="New__release-list-item-link__image">
+                                    </div>
                                     <div class="New__release-list-item-link__info">
                                         <div class="New__release-list-item-link__info-NameSong">Hẹn Anh Kiếp Sau</div>
                                         <div class="New__release-list-item-link__info-Ten">Nhật thủy</div>
@@ -551,7 +833,9 @@
                             </div>
                             <div class="New__release-list-item">
                                 <a href="" class="New__release-list-item-link">
-                                    <img src="asset/img/slider/slider1.jpg" alt="" class="New__release-list-item-link__image">
+                                    <div class="New__release-list-item-link__thumbnail">
+                                        <img src="asset/img/active2/066d26b40cc4aa939f62c70492095685.jpg" alt="" class="New__release-list-item-link__image">
+                                    </div>
                                     <div class="New__release-list-item-link__info">
                                         <div class="New__release-list-item-link__info-NameSong">Hẹn Anh Kiếp Sau</div>
                                         <div class="New__release-list-item-link__info-Ten">Nhật thủy</div>
@@ -565,7 +849,9 @@
                             </div>
                             <div class="New__release-list-item">
                                 <a href="" class="New__release-list-item-link">
-                                    <img src="asset/img/slider/slider1.jpg" alt="" class="New__release-list-item-link__image">
+                                    <div class="New__release-list-item-link__thumbnail">
+                                        <img src="asset/img/active2/066d26b40cc4aa939f62c70492095685.jpg" alt="" class="New__release-list-item-link__image">
+                                    </div>
                                     <div class="New__release-list-item-link__info">
                                         <div class="New__release-list-item-link__info-NameSong">Hẹn Anh Kiếp Sau</div>
                                         <div class="New__release-list-item-link__info-Ten">Nhật thủy</div>
@@ -1061,7 +1347,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="active-4" style="height:1000px">
+                    <div class="active-4">
                         <div class="Ranking">
                             <div class="Ranking__title">
                                 Bảng xếp hạng
@@ -1157,6 +1443,576 @@
                             <i class="Ranking__iconPN-icon Ranking__iconPN-icon-R fa-solid fa-angle-right"></i>
                         </div>
                     </div>
+                    <div class="active-5">
+                        <div class="session zm__session-4">
+                            <div class="session__title">
+                                <div class="session__title-text">Top 100</div>
+                                <a href="" class="session__title-all">Tất cả 
+                                    <i class="session__title-all-icon fa-solid fa-angle-right"></i>
+                                </a>
+                            </div>
+                            <div class="session__list">
+                                <div class="session__list-item">
+                                    <a href="" class="session__list-item-link">
+                                        <img src="asset/img/active5/t1.jpg" alt="" class="session__list-item-image">
+                                        <div class="session__list-item-all__icon">
+                                            <i class="session__list-item-all__icon-TB fa-regular fa-heart"></i>
+                                            <i class="session__list-item-all__icon-play fa-solid fa-play"></i>
+                                            <i class="session__list-item-all__icon-TB session__list-item-all__icon-ellipsis fa-solid fa-ellipsis"></i>
+                                        </div>
+                                    </a>
+                                    <div class="session__list-item-all__menu">
+                                        <div class="session__list-item-all__menu-item">
+                                            <i class="session__list-item-all__menu-item-icon fa-solid fa-circle-plus"></i>
+                                            <div>Thêm vào danh sách phát</div>
+                                        </div>
+                                        <div class="session__list-item-all__menu-item">
+                                            <i class="session__list-item-all__menu-item-icon fa-solid fa-link"></i>
+                                            <div>Sao chép link</div>
+                                        </div>
+                                        <div class="session__list-item-all__menu-item">
+                                            <div class="session__list-item-all__menu-item-share">
+                                                <i class="session__list-item-all__menu-item-icon fa-solid fa-share"></i>
+                                                <div>Chia sẽ</div>
+                                            </div>
+                                            <i class="fa-solid fa-chevron-right"></i>
+                                        </div>
+                                    </div>
+                                    <div class="active5__info">
+                                        <div class="active5__info-text">Top 100 Bài Hát Nhạc Trẻ Hay</div>
+                                        <a href="" class="active5__info-link">Quang Hùng MasterD</a>
+                                    </div>
+                                </div>
+                                <div class="session__list-item">
+                                    <a href="" class="session__list-item-link">
+                                        <img src="asset/img/active5/t2.jpg" alt="" class="session__list-item-image">
+                                        <div class="session__list-item-all__icon">
+                                            <i class="session__list-item-all__icon-TB fa-regular fa-heart"></i>
+                                            <i class="session__list-item-all__icon-play fa-solid fa-play"></i>
+                                            <i class="session__list-item-all__icon-TB session__list-item-all__icon-ellipsis fa-solid fa-ellipsis"></i>
+                                        </div>
+                                    </a>
+                                    <div class="session__list-item-all__menu">
+                                        <div class="session__list-item-all__menu-item">
+                                            <i class="session__list-item-all__menu-item-icon fa-solid fa-circle-plus"></i>
+                                            <div>Thêm vào danh sách phát</div>
+                                        </div>
+                                        <div class="session__list-item-all__menu-item">
+                                            <i class="session__list-item-all__menu-item-icon fa-solid fa-link"></i>
+                                            <div>Sao chép link</div>
+                                        </div>
+                                        <div class="session__list-item-all__menu-item">
+                                            <div class="session__list-item-all__menu-item-share">
+                                                <i class="session__list-item-all__menu-item-icon fa-solid fa-share"></i>
+                                                <div>Chia sẽ</div>
+                                            </div>
+                                            <i class="fa-solid fa-chevron-right"></i>
+                                        </div>
+                                    </div>
+                                    <div class="active5__info">
+                                        <div class="active5__info-text">Top 100 Nhạc Trữ Tình Hay Nhất</div>
+                                        <a href="" class="active5__info-link">Quỳnh Trang</a>
+                                    </div>
+                                </div>
+                                <div class="session__list-item">
+                                    <a href="" class="session__list-item-link">
+                                        <img src="asset/img/active5/t3.jpg" alt="" class="session__list-item-image">
+                                        <div class="session__list-item-all__icon">
+                                            <i class="session__list-item-all__icon-TB fa-regular fa-heart"></i>
+                                            <i class="session__list-item-all__icon-play fa-solid fa-play"></i>
+                                            <i class="session__list-item-all__icon-TB session__list-item-all__icon-ellipsis fa-solid fa-ellipsis"></i>
+                                        </div>
+                                    </a>
+                                    <div class="session__list-item-all__menu">
+                                        <div class="session__list-item-all__menu-item">
+                                            <i class="session__list-item-all__menu-item-icon fa-solid fa-circle-plus"></i>
+                                            <div>Thêm vào danh sách phát</div>
+                                        </div>
+                                        <div class="session__list-item-all__menu-item">
+                                            <i class="session__list-item-all__menu-item-icon fa-solid fa-link"></i>
+                                            <div>Sao chép link</div>
+                                        </div>
+                                        <div class="session__list-item-all__menu-item">
+                                            <div class="session__list-item-all__menu-item-share">
+                                                <i class="session__list-item-all__menu-item-icon fa-solid fa-share"></i>
+                                                <div>Chia sẽ</div>
+                                            </div>
+                                            <i class="fa-solid fa-chevron-right"></i>
+                                        </div>
+                                    </div>
+                                    <div class="active5__info">
+                                        <div class="active5__info-text">Top 100 Pop Âu Mỹ Hay Nhất</div>
+                                        <a href="" class="active5__info-link">Taylor Swift</a>
+                                    </div>
+                                </div>
+                                <div class="session__list-item">
+                                    <a href="" class="session__list-item-link">
+                                        <img src="asset/img/active5/t4.jpg" alt="" class="session__list-item-image">
+                                        <div class="session__list-item-all__icon">
+                                            <i class="session__list-item-all__icon-TB fa-regular fa-heart"></i>
+                                            <i class="session__list-item-all__icon-play fa-solid fa-play"></i>
+                                            <i class="session__list-item-all__icon-TB session__list-item-all__icon-ellipsis fa-solid fa-ellipsis"></i>
+                                        </div>
+                                    </a>
+                                    <div class="session__list-item-all__menu">
+                                        <div class="session__list-item-all__menu-item">
+                                            <i class="session__list-item-all__menu-item-icon fa-solid fa-circle-plus"></i>
+                                            <div>Thêm vào danh sách phát</div>
+                                        </div>
+                                        <div class="session__list-item-all__menu-item">
+                                            <i class="session__list-item-all__menu-item-icon fa-solid fa-link"></i>
+                                            <div>Sao chép link</div>
+                                        </div>
+                                        <div class="session__list-item-all__menu-item">
+                                            <div class="session__list-item-all__menu-item-share">
+                                                <i class="session__list-item-all__menu-item-icon fa-solid fa-share"></i>
+                                                <div>Chia sẽ</div>
+                                            </div>
+                                            <i class="fa-solid fa-chevron-right"></i>
+                                        </div>
+                                    </div>
+                                    <div class="active5__info">
+                                        <div class="active5__info-text">Top 100 Nhạc Electronic/Dance Âu</div>
+                                        <a href="" class="active5__info-link">Alan Walker</a>
+                                    </div>
+                                </div>
+                                <div class="session__list-item">
+                                    <a href="" class="session__list-item-link">
+                                        <img src="asset/img/active5/t5.jpg" alt="" class="session__list-item-image">
+                                        <div class="session__list-item-all__icon">
+                                            <i class="session__list-item-all__icon-TB fa-regular fa-heart"></i>
+                                            <i class="session__list-item-all__icon-play fa-solid fa-play"></i>
+                                            <i class="session__list-item-all__icon-TB session__list-item-all__icon-ellipsis fa-solid fa-ellipsis"></i>
+                                        </div>
+                                    </a>
+                                    <div class="session__list-item-all__menu">
+                                        <div class="session__list-item-all__menu-item">
+                                            <i class="session__list-item-all__menu-item-icon fa-solid fa-circle-plus"></i>
+                                            <div>Thêm vào danh sách phát</div>
+                                        </div>
+                                        <div class="session__list-item-all__menu-item">
+                                            <i class="session__list-item-all__menu-item-icon fa-solid fa-link"></i>
+                                            <div>Sao chép link</div>
+                                        </div>
+                                        <div class="session__list-item-all__menu-item">
+                                            <div class="session__list-item-all__menu-item-share">
+                                                <i class="session__list-item-all__menu-item-icon fa-solid fa-share"></i>
+                                                <div>Chia sẽ</div>
+                                            </div>
+                                            <i class="fa-solid fa-chevron-right"></i>
+                                        </div>
+                                    </div>
+                                    <div class="active5__info">
+                                        <div class="active5__info-text">Top 100 Nhạc Hàn Quốc</div>
+                                        <a href="" class="active5__info-link">BABYMONSTER</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="session zm__session-5">
+                            <div class="session__title">
+                                <div class="session__title-text">Album Hot</div>
+                                <a href="" class="session__title-all">Tất cả 
+                                    <i class="session__title-all-icon fa-solid fa-angle-right"></i>
+                                </a>
+                            </div>
+                            <div class="session__list">
+                                <div class="session__list-item">
+                                    <a href="" class="session__list-item-link">
+                                        <img src="asset/img/active5/11.jpg" alt="" class="session__list-item-image">
+                                        <div class="session__list-item-all__icon">
+                                            <i class="session__list-item-all__icon-TB fa-regular fa-heart"></i>
+                                            <i class="session__list-item-all__icon-play fa-solid fa-play"></i>
+                                            <i class="session__list-item-all__icon-TB session__list-item-all__icon-ellipsis fa-solid fa-ellipsis"></i>
+                                        </div>
+                                    </a>
+                                    <div class="session__list-item-all__menu">
+                                        <div class="session__list-item-all__menu-item">
+                                            <i class="session__list-item-all__menu-item-icon fa-solid fa-circle-plus"></i>
+                                            <div>Thêm vào danh sách phát</div>
+                                        </div>
+                                        <div class="session__list-item-all__menu-item">
+                                            <i class="session__list-item-all__menu-item-icon fa-solid fa-link"></i>
+                                            <div>Sao chép link</div>
+                                        </div>
+                                        <div class="session__list-item-all__menu-item">
+                                            <div class="session__list-item-all__menu-item-share">
+                                                <i class="session__list-item-all__menu-item-icon fa-solid fa-share"></i>
+                                                <div>Chia sẽ</div>
+                                            </div>
+                                            <i class="fa-solid fa-chevron-right"></i>
+                                        </div>
+                                    </div>
+                                    <div class="session__list-item-link__info">
+                                            Khi những bản nhạc cũ được làm mới một cách đầy thú vị
+                                    </div>
+                                </div>
+                                <div class="session__list-item">
+                                    <a href="" class="session__list-item-link">
+                                        <img src="asset/img/active5/22.jpg" alt="" class="session__list-item-image">
+                                        <div class="session__list-item-all__icon">
+                                            <i class="session__list-item-all__icon-TB fa-regular fa-heart"></i>
+                                            <i class="session__list-item-all__icon-play fa-solid fa-play"></i>
+                                            <i class="session__list-item-all__icon-TB session__list-item-all__icon-ellipsis fa-solid fa-ellipsis"></i>
+                                        </div>
+                                    </a>
+                                    <div class="session__list-item-all__menu">
+                                        <div class="session__list-item-all__menu-item">
+                                            <i class="session__list-item-all__menu-item-icon fa-solid fa-circle-plus"></i>
+                                            <div>Thêm vào danh sách phát</div>
+                                        </div>
+                                        <div class="session__list-item-all__menu-item">
+                                            <i class="session__list-item-all__menu-item-icon fa-solid fa-link"></i>
+                                            <div>Sao chép link</div>
+                                        </div>
+                                        <div class="session__list-item-all__menu-item">
+                                            <div class="session__list-item-all__menu-item-share">
+                                                <i class="session__list-item-all__menu-item-icon fa-solid fa-share"></i>
+                                                <div>Chia sẽ</div>
+                                            </div>
+                                            <i class="fa-solid fa-chevron-right"></i>
+                                        </div>
+                                    </div>
+                                    <div class="session__list-item-link__info">
+                                        Lofi chill những cảm xúc đông đầy
+                                    </div>
+                                </div>
+                                <div class="session__list-item">
+                                    <a href="" class="session__list-item-link">
+                                        <img src="asset/img/active5/33.jpg" alt="" class="session__list-item-image">
+                                        <div class="session__list-item-all__icon">
+                                            <i class="session__list-item-all__icon-TB fa-regular fa-heart"></i>
+                                            <i class="session__list-item-all__icon-play fa-solid fa-play"></i>
+                                            <i class="session__list-item-all__icon-TB session__list-item-all__icon-ellipsis fa-solid fa-ellipsis"></i>
+                                        </div>
+                                    </a>
+                                    <div class="session__list-item-all__menu">
+                                        <div class="session__list-item-all__menu-item">
+                                            <i class="session__list-item-all__menu-item-icon fa-solid fa-circle-plus"></i>
+                                            <div>Thêm vào danh sách phát</div>
+                                        </div>
+                                        <div class="session__list-item-all__menu-item">
+                                            <i class="session__list-item-all__menu-item-icon fa-solid fa-link"></i>
+                                            <div>Sao chép link</div>
+                                        </div>
+                                        <div class="session__list-item-all__menu-item">
+                                            <div class="session__list-item-all__menu-item-share">
+                                                <i class="session__list-item-all__menu-item-icon fa-solid fa-share"></i>
+                                                <div>Chia sẽ</div>
+                                            </div>
+                                            <i class="fa-solid fa-chevron-right"></i>
+                                        </div>
+                                    </div>
+                                    <div class="session__list-item-link__info">
+                                        Không âu lo muộn phiền , một ngày êm đềm trôi
+                                    </div>
+                                </div>
+                                <div class="session__list-item">
+                                    <a href="" class="session__list-item-link">
+                                        <img src="asset/img/active5/44.jpg" alt="" class="session__list-item-image">
+                                        <div class="session__list-item-all__icon">
+                                            <i class="session__list-item-all__icon-TB fa-regular fa-heart"></i>
+                                            <i class="session__list-item-all__icon-play fa-solid fa-play"></i>
+                                            <i class="session__list-item-all__icon-TB session__list-item-all__icon-ellipsis fa-solid fa-ellipsis"></i>
+                                        </div>
+                                    </a>
+                                    <div class="session__list-item-all__menu">
+                                        <div class="session__list-item-all__menu-item">
+                                            <i class="session__list-item-all__menu-item-icon fa-solid fa-circle-plus"></i>
+                                            <div>Thêm vào danh sách phát</div>
+                                        </div>
+                                        <div class="session__list-item-all__menu-item">
+                                            <i class="session__list-item-all__menu-item-icon fa-solid fa-link"></i>
+                                            <div>Sao chép link</div>
+                                        </div>
+                                        <div class="session__list-item-all__menu-item">
+                                            <div class="session__list-item-all__menu-item-share">
+                                                <i class="session__list-item-all__menu-item-icon fa-solid fa-share"></i>
+                                                <div>Chia sẽ</div>
+                                            </div>
+                                            <i class="fa-solid fa-chevron-right"></i>
+                                        </div>
+                                    </div>
+                                    <div class="session__list-item-link__info">
+                                        Khi bạn cần giai điệu để xoa dịu những tổn thương đã
+                                    </div>
+                                </div>
+                                <div class="session__list-item">
+                                    <a href="" class="session__list-item-link">
+                                        <img src="asset/img/active5/55.jpg" alt="" class="session__list-item-image">
+                                        <div class="session__list-item-all__icon">
+                                            <i class="session__list-item-all__icon-TB fa-regular fa-heart"></i>
+                                            <i class="session__list-item-all__icon-play fa-solid fa-play"></i>
+                                            <i class="session__list-item-all__icon-TB session__list-item-all__icon-ellipsis fa-solid fa-ellipsis"></i>
+                                        </div>
+                                    </a>
+                                    <div class="session__list-item-all__menu">
+                                        <div class="session__list-item-all__menu-item">
+                                            <i class="session__list-item-all__menu-item-icon fa-solid fa-circle-plus"></i>
+                                            <div>Thêm vào danh sách phát</div>
+                                        </div>
+                                        <div class="session__list-item-all__menu-item">
+                                            <i class="session__list-item-all__menu-item-icon fa-solid fa-link"></i>
+                                            <div>Sao chép link</div>
+                                        </div>
+                                        <div class="session__list-item-all__menu-item">
+                                            <div class="session__list-item-all__menu-item-share">
+                                                <i class="session__list-item-all__menu-item-icon fa-solid fa-share"></i>
+                                                <div>Chia sẽ</div>
+                                            </div>
+                                            <i class="fa-solid fa-chevron-right"></i>
+                                        </div>
+                                    </div>
+                                    <div class="session__list-item-link__info">
+                                        Ký ức ùa về cùng những giọng ca rất đỗi mộc mạc
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="active-6">
+                        <div class="Radio__title">
+                            <div class="Radio__title-text">Radio Nổi Bật</div>
+                            <a href="" class="Radio__title-all">Tất cả 
+                                <i class="Radio__title-all-icon fa-solid fa-angle-right"></i>
+                            </a>
+                        </div>
+                        <div class="Radio__list">
+                            <div class="Radio__list-item">
+                                <a href="" class="Radio__list-item-link">
+                                    <div class="Radio__list-item-link__div">
+                                        <img src="asset/img/active6/1.jpg" alt="" class="Radio__list-item-link__div-img">
+                                        <i class="Radio__list-item-link__div-icon fa-solid fa-play"></i>
+                                    </div>
+                                    <div class="Radio__list-item-body">
+                                        <div class="Radio__list-item-body__head">VPOP</div>
+                                        <div class="Radio__list-item-body__bottom">80 dang nghe</div>
+                                    </div>
+                                </a>
+                                 <div class="Radio__list-item-link__list-small">
+                                    <img src="asset/img/active6/2.jpg" alt="" class="Radio__list-item-link__list-small-img">
+                                    <p class="Radio__list-item-link__list-small-live">live</p>
+                                </div>
+                            </div>
+                            <div class="Radio__list-item">
+                                <a href="" class="Radio__list-item-link">
+                                    <div class="Radio__list-item-link__div">
+                                        <img src="asset/img/active6/1.jpg" alt="" class="Radio__list-item-link__div-img">
+                                        <i class="Radio__list-item-link__div-icon fa-solid fa-play"></i>
+                                    </div>
+                                    <div class="Radio__list-item-body">
+                                        <div class="Radio__list-item-body__head">VPOP</div>
+                                        <div class="Radio__list-item-body__bottom">80 dang nghe</div>
+                                    </div>
+                                </a>
+                                 <div class="Radio__list-item-link__list-small">
+                                    <img src="asset/img/active6/2.jpg" alt="" class="Radio__list-item-link__list-small-img">
+                                    <p class="Radio__list-item-link__list-small-live">live</p>
+                                </div>
+                            </div>
+                            <div class="Radio__list-item">
+                                <a href="" class="Radio__list-item-link">
+                                    <div class="Radio__list-item-link__div">
+                                        <img src="asset/img/active6/1.jpg" alt="" class="Radio__list-item-link__div-img">
+                                        <i class="Radio__list-item-link__div-icon fa-solid fa-play"></i>
+                                    </div>
+                                    <div class="Radio__list-item-body">
+                                        <div class="Radio__list-item-body__head">VPOP</div>
+                                        <div class="Radio__list-item-body__bottom">80 dang nghe</div>
+                                    </div>
+                                </a>
+                                 <div class="Radio__list-item-link__list-small">
+                                    <img src="asset/img/active6/2.jpg" alt="" class="Radio__list-item-link__list-small-img">
+                                    <p class="Radio__list-item-link__list-small-live">live</p>
+                                </div>
+                            </div>
+                            <div class="Radio__list-item">
+                                <a href="" class="Radio__list-item-link">
+                                    <div class="Radio__list-item-link__div">
+                                        <img src="asset/img/active6/1.jpg" alt="" class="Radio__list-item-link__div-img">
+                                        <i class="Radio__list-item-link__div-icon fa-solid fa-play"></i>
+                                    </div>
+                                    <div class="Radio__list-item-body">
+                                        <div class="Radio__list-item-body__head">VPOP</div>
+                                        <div class="Radio__list-item-body__bottom">80 dang nghe</div>
+                                    </div>
+                                </a>
+                                 <div class="Radio__list-item-link__list-small">
+                                    <img src="asset/img/active6/2.jpg" alt="" class="Radio__list-item-link__list-small-img">
+                                    <p class="Radio__list-item-link__list-small-live">live</p>
+                                </div>
+                            </div>
+                            <div class="Radio__list-item">
+                                <a href="" class="Radio__list-item-link">
+                                    <div class="Radio__list-item-link__div">
+                                        <img src="asset/img/active6/1.jpg" alt="" class="Radio__list-item-link__div-img">
+                                        <i class="Radio__list-item-link__div-icon fa-solid fa-play"></i>
+                                    </div>
+                                    <div class="Radio__list-item-body">
+                                        <div class="Radio__list-item-body__head">VPOP</div>
+                                        <div class="Radio__list-item-body__bottom">80 dang nghe</div>
+                                    </div>
+                                </a>
+                                 <div class="Radio__list-item-link__list-small">
+                                    <img src="asset/img/active6/2.jpg" alt="" class="Radio__list-item-link__list-small-img">
+                                    <p class="Radio__list-item-link__list-small-live">live</p>
+                                </div>
+                            </div>
+                            <div class="Radio__list-item">
+                                <a href="" class="Radio__list-item-link">
+                                    <div class="Radio__list-item-link__div">
+                                        <img src="asset/img/active6/1.jpg" alt="" class="Radio__list-item-link__div-img">
+                                        <i class="Radio__list-item-link__div-icon fa-solid fa-play"></i>
+                                    </div>
+                                    <div class="Radio__list-item-body">
+                                        <div class="Radio__list-item-body__head">VPOP</div>
+                                        <div class="Radio__list-item-body__bottom">80 dang nghe</div>
+                                    </div>
+                                </a>
+                                 <div class="Radio__list-item-link__list-small">
+                                    <img src="asset/img/active6/2.jpg" alt="" class="Radio__list-item-link__list-small-img">
+                                    <p class="Radio__list-item-link__list-small-live">live</p>
+                                </div>
+                            </div>
+                            <div class="Radio__list-item">
+                                <a href="" class="Radio__list-item-link">
+                                    <div class="Radio__list-item-link__div">
+                                        <img src="asset/img/active6/1.jpg" alt="" class="Radio__list-item-link__div-img">
+                                        <i class="Radio__list-item-link__div-icon fa-solid fa-play"></i>
+                                    </div>
+                                    <div class="Radio__list-item-body">
+                                        <div class="Radio__list-item-body__head">VPOP</div>
+                                        <div class="Radio__list-item-body__bottom">80 dang nghe</div>
+                                    </div>
+                                </a>
+                                 <div class="Radio__list-item-link__list-small">
+                                    <img src="asset/img/active6/2.jpg" alt="" class="Radio__list-item-link__list-small-img">
+                                    <p class="Radio__list-item-link__list-small-live">live</p>
+                                </div>
+                            </div>
+                            <div class="Radio__list-item">
+                                <a href="" class="Radio__list-item-link">
+                                    <div class="Radio__list-item-link__div">
+                                        <img src="asset/img/active6/1.jpg" alt="" class="Radio__list-item-link__div-img">
+                                        <i class="Radio__list-item-link__div-icon fa-solid fa-play"></i>
+                                    </div>
+                                    <div class="Radio__list-item-body">
+                                        <div class="Radio__list-item-body__head">VPOP</div>
+                                        <div class="Radio__list-item-body__bottom">80 dang nghe</div>
+                                    </div>
+                                </a>
+                                 <div class="Radio__list-item-link__list-small">
+                                    <img src="asset/img/active6/2.jpg" alt="" class="Radio__list-item-link__list-small-img">
+                                    <p class="Radio__list-item-link__list-small-live">live</p>
+                                </div>
+                            </div>
+                            <div class="Radio__list-item">
+                                <a href="" class="Radio__list-item-link">
+                                    <div class="Radio__list-item-link__div">
+                                        <img src="asset/img/active6/1.jpg" alt="" class="Radio__list-item-link__div-img">
+                                        <i class="Radio__list-item-link__div-icon fa-solid fa-play"></i>
+                                    </div>
+                                    <div class="Radio__list-item-body">
+                                        <div class="Radio__list-item-body__head">VPOP</div>
+                                        <div class="Radio__list-item-body__bottom">80 dang nghe</div>
+                                    </div>
+                                </a>
+                                 <div class="Radio__list-item-link__list-small">
+                                    <img src="asset/img/active6/2.jpg" alt="" class="Radio__list-item-link__list-small-img">
+                                    <p class="Radio__list-item-link__list-small-live">live</p>
+                                </div>
+                            </div>
+                            <div class="Radio__list-item">
+                                <a href="" class="Radio__list-item-link">
+                                    <div class="Radio__list-item-link__div">
+                                        <img src="asset/img/active6/1.jpg" alt="" class="Radio__list-item-link__div-img">
+                                        <i class="Radio__list-item-link__div-icon fa-solid fa-play"></i>
+                                    </div>
+                                    <div class="Radio__list-item-body">
+                                        <div class="Radio__list-item-body__head">VPOP</div>
+                                        <div class="Radio__list-item-body__bottom">80 dang nghe</div>
+                                    </div>
+                                </a>
+                                 <div class="Radio__list-item-link__list-small">
+                                    <img src="asset/img/active6/2.jpg" alt="" class="Radio__list-item-link__list-small-img">
+                                    <p class="Radio__list-item-link__list-small-live">live</p>
+                                </div>
+                            </div>
+                            <div class="Radio__list-item">
+                                <a href="" class="Radio__list-item-link">
+                                    <div class="Radio__list-item-link__div">
+                                        <img src="asset/img/active6/1.jpg" alt="" class="Radio__list-item-link__div-img">
+                                        <i class="Radio__list-item-link__div-icon fa-solid fa-play"></i>
+                                    </div>
+                                    <div class="Radio__list-item-body">
+                                        <div class="Radio__list-item-body__head">VPOP</div>
+                                        <div class="Radio__list-item-body__bottom">80 dang nghe</div>
+                                    </div>
+                                </a>
+                                 <div class="Radio__list-item-link__list-small">
+                                    <img src="asset/img/active6/2.jpg" alt="" class="Radio__list-item-link__list-small-img">
+                                    <p class="Radio__list-item-link__list-small-live">live</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="Radio__bottom">
+                            <i class="Radio__bottom-icon Radio__bottom-icon-left fa-solid fa-chevron-left"></i>
+                            <i class="Radio__bottom-icon  Radio__bottom-icon-right fa-solid fa-chevron-right"></i>
+                        </div>
+                    </div>
+                    <div class="active7" style="height: 1000px;">
+                        <div class="Business-Partners__title">Đối Tác Âm Nhạc</div>
+                        <div class="Business-Partners__list">
+                            <div class="Business-Partners__list-item">
+                                    <img src="asset/img/active7/1.png" alt="" class="Business-Partners__list-item-image">
+                            </div>
+                            <div class="Business-Partners__list-item">
+                                    <img src="asset/img/active7/2.png" alt="" class="Business-Partners__list-item-image">
+                            </div>
+                            <div class="Business-Partners__list-item">
+                                    <img src="asset/img/active7/3.png" alt="" class="Business-Partners__list-item-image">
+                            </div>
+                            <div class="Business-Partners__list-item">
+                                    <img src="asset/img/active7/4.png" alt="" class="Business-Partners__list-item-image">
+                            </div>
+                            <div class="Business-Partners__list-item">
+                                    <img src="asset/img/active7/5.png" alt="" class="Business-Partners__list-item-image">
+                            </div>
+                            <div class="Business-Partners__list-item">
+                                    <img src="asset/img/active7/6.png" alt="" class="Business-Partners__list-item-image">
+                            </div>
+                            <div class="Business-Partners__list-item">
+                                    <img src="asset/img/active7/7.png" alt="" class="Business-Partners__list-item-image">
+                            </div>
+                            <div class="Business-Partners__list-item">
+                                    <img src="asset/img/active7/8.png" alt="" class="Business-Partners__list-item-image">
+                            </div>
+                            <div class="Business-Partners__list-item">
+                                    <img src="asset/img/active7/9.png" alt="" class="Business-Partners__list-item-image">
+                            </div>
+                            <div class="Business-Partners__list-item">
+                                <img src="asset/img/active7/10.png" alt="" class="Business-Partners__list-item-image">
+                            </div>
+                            <div class="Business-Partners__list-item">
+                                    <img src="asset/img/active7/11.png" alt="" class="Business-Partners__list-item-image">
+                            </div>
+                            <div class="Business-Partners__list-item">
+                                    <img src="asset/img/active7/12.png" alt="" class="Business-Partners__list-item-image">
+                            </div>
+                            <div class="Business-Partners__list-item">
+                                    <img src="asset/img/active7/13.png" alt="" class="Business-Partners__list-item-image">
+                            </div>
+                            <div class="Business-Partners__list-item">
+                                    <img src="asset/img/active7/14.png" alt="" class="Business-Partners__list-item-image">
+                            </div>
+                            <div class="Business-Partners__list-item">
+                                    <img src="asset/img/active7/15.png" alt="" class="Business-Partners__list-item-image">
+                            </div>
+                            <div class="Business-Partners__list-item">
+                                    <img src="asset/img/active7/16.png" alt="" class="Business-Partners__list-item-image">
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
             <div class="zm__section">
@@ -1184,10 +2040,20 @@
     <!-- script -->
     <script type="module" src="asset/js/ManageUsersLogin.js"></script>
     <script type="module" src="asset/js/logoutUser.js"></script>
+    <script type="module" src="asset/js/loginSocial.js"></script>
+    <script src="asset/js/login.js"></script>
+    <script src="asset/js/register.js"></script>
+
+
+
+
 
     <script>
 
-            // tất mở form tìm kiếm bài hát trên input search
+
+
+
+            // xử lý tất mở form tìm kiếm bài hát trên input search
             const headeHeadSearchContent = document.querySelector('.header__head-search__content');
             document.querySelector('.header__head-search-input__text').addEventListener('focus', function(){
                 headeHeadSearchContent.style.display = 'block';
@@ -1196,6 +2062,67 @@
                 headeHeadSearchContent.style.display = 'none';
             })
 
+
+
+
+
+
+
+
+
+            // xử lý click icon setting header 
+                let is = 0;
+                const headerUserList = document.querySelector('.header__user-list')
+                document.querySelector('.header__user-icon-setting').addEventListener('click', function(){
+                    toggleIs()
+                })
+                
+                function toggleIs() {
+                    if (is == 0) {
+                        is++;
+                        headerUserList.style.display = 'block';
+                        // console.log('bật');
+                    } else if (is == 1) {
+                        is = 0;
+                        headerUserList.style.display = 'none';
+                        // console.log('tất');
+                    } else {
+                        console.log('error');
+                    }
+                }
+
+
+
+
+
+
+
+            // xử lý click icon user header
+            let isUser = 0;
+            const headerUserLogin = document.querySelector('.header__user-login');
+            document.querySelector('.header__user-icon-account').addEventListener('click', function(){
+                toggleIsLoginAccount()
+            })
+            function toggleIsLoginAccount() {
+                if (isUser == 0) {
+                    isUser++;
+                    headerUserLogin.style.display = 'block';
+                    // console.log('bật');
+                } else if (isUser == 1) {
+                    isUser = 0;
+                    headerUserLogin.style.display = 'none';
+                    // console.log('tất');
+                } else {
+                    console.log('error');
+                }
+            }   
+
+
+
+
+
+
+
             // xử lý click vào right 
             document.querySelector('.zm__section-container-head-icon-remove').addEventListener('click', function(){
                 console.log(1);
@@ -1203,6 +2130,15 @@
                 document.querySelector('.header').style.right = '0';
                 document.querySelector('.zm__box-active').style.right = '0';
             })
+
+
+
+
+
+
+
+
+
 
             // xử lý click icon menu trong session
             const a = document.querySelectorAll('.session__list-item-all__icon-ellipsis')
@@ -1230,6 +2166,71 @@
                 })
             })
             
+
+
+
+
+
+
+
+
+            // xử lý chạy tự động bảng xếp hạng bài hát từ 1 đến 10 . rồi chạy về ban đầu
+            // cách giải tiếp theo là chia 3 item trong 1 div rồi thêm active = block và hiệu ứng trượt từ phải sang trái, còn các item còn lại thêm display : block
+            let i = 1
+            // let j = 0
+            const rankList = document.querySelector('.Ranking__list');
+            setInterval(() => {
+                i++;
+                // j + 2;
+                if (i == 2){
+                    rankList.style.transform = 'translate3d(-1074px, 0px, 0px)';
+                    // console.log('-2');
+
+                }else if(i == 3){
+                    // console.log('-3');
+
+                }else{
+                    i = 1
+                    rankList.style.transform = 'translate3d(0px, 0px, 0px)';
+                    // console.log('start end');
+                }
+            }, 4000)
+
+
+
+
+
+
+
+
+            // xử lý click 
+            const radioList = document.querySelector('.Radio__list');
+            document.querySelector('.Radio__bottom-icon-left').addEventListener('click' , function(){
+                radioList.style.transform = 'translate3d(0px, 0px, 0px)';
+            })
+            document.querySelector('.Radio__bottom-icon-right').addEventListener('click' , function(){
+                radioList.style.transform = 'translate3d(-1030px, 0px, 0px)';
+            })
+
+
+
+
+
+
+
+
+
+            // xử lý click xuất form login
+            const lg = document.querySelector('.LG');
+            // console.log(lg);
+            document.querySelector('.header__user-login__BT').addEventListener('click' , function(){
+                lg.style.display = 'block';
+                lg.style.opacity = '1';
+            })
+
+
+
+
 
     </script>
 

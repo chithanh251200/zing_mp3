@@ -22,7 +22,8 @@ const analytics = getAnalytics(firebaseApp);
 const auth = getAuth(firebaseApp);
 
 
-//check user hiên tại đang đang nhập
+
+//check user hiên tại có đang đăng nhập không
 onAuthStateChanged(auth, (user) => {
   if (user) {
 
@@ -56,16 +57,3 @@ onAuthStateChanged(auth, (user) => {
     // ...
   }
 });
-
-
-// Cập nhật hồ sơ người dùng
-// updateProfile(auth.currentUser, {
-//   displayName: "Jane Q. User", 
-//   photoURL: "https://example.com/jane-q-user/profile.jpg"
-// }).then(() => {
-//   // Profile updated!
-//   // ...
-// }).catch((error) => {
-//   // An error occurred
-//   // ...
-// });

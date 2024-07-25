@@ -1,28 +1,46 @@
 
+
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-app.js";
 import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-analytics.js";
 
 // Add Firebase products that you want to use
-import { getAuth ,signInWithPopup ,   GoogleAuthProvider , FacebookAuthProvider, RecaptchaVerifier , signInWithPhoneNumber } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-auth.js";
+import { getAuth ,
+    signInWithPopup ,   
+    GoogleAuthProvider , 
+    FacebookAuthProvider, 
+    RecaptchaVerifier , 
+    signInWithPhoneNumber ,
+    // kiểm tra user có đang đăng nhập không
+    onAuthStateChanged,
+    // đăng xuất
+    signOut
+} from "https://www.gstatic.com/firebasejs/10.8.0/firebase-auth.js";
 
 import { getFirestore } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-firestore.js";
 
+
+
 const firebaseConfig = {
-    apiKey: "AIzaSyABrdRvmExHlsjAaXj8v2lUBqojmWg8_GI",
-    authDomain: "zing-mp3-d2229.firebaseapp.com",
-    databaseURL: "https://zing-mp3-d2229-default-rtdb.firebaseio.com",
-    projectId: "zing-mp3-d2229",
-    storageBucket: "zing-mp3-d2229.appspot.com",
-    messagingSenderId: "734057184662",
-    appId: "1:734057184662:web:b993bb92617409b31931b7",
-    measurementId: "G-EPBHRQGEDD"
-};
+        apiKey: "AIzaSyABrdRvmExHlsjAaXj8v2lUBqojmWg8_GI",
+        authDomain: "zing-mp3-d2229.firebaseapp.com",
+        projectId: "zing-mp3-d2229",
+        storageBucket: "zing-mp3-d2229.appspot.com",
+        messagingSenderId: "734057184662",
+        appId: "1:734057184662:web:b993bb92617409b31931b7",
+        measurementId: "G-EPBHRQGEDD"
+    };
+
+
+
+
 
 // Initialize Firebase
 const firebaseApp = initializeApp(firebaseConfig);
 const analytics = getAnalytics(firebaseApp);
 const auth = getAuth(firebaseApp);
+
+
 
 
 
@@ -42,7 +60,7 @@ if(googleLogin){
                 const credential = GoogleAuthProvider.credentialFromResult(result);
                 const user = result.user;
                 const token = user.uid;
-                console.log(user);
+                // console.log(user);
     
                 window.location.href = 'http://localhost:88/chithanh/zing-mp3';
             })
@@ -172,3 +190,15 @@ if(buttonSendPhone){
 //         console.log(error);
 //     });
 // });
+
+
+
+
+
+
+
+
+
+
+
+    
